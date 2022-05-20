@@ -1,4 +1,4 @@
-package norbekov
+package server
 
 import (
 	"context"
