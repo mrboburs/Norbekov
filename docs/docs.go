@@ -204,14 +204,14 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/contact/create": {
-            "post": {
+        "/api/contacts/get": {
+            "get": {
                 "security": [
                     {
                         "ApiKeyAuth": []
                     }
                 ],
-                "description": "create contact_post",
+                "description": "get  contacts",
                 "consumes": [
                     "application/json"
                 ],
@@ -221,24 +221,13 @@ const docTemplate = `{
                 "tags": [
                     "Contact"
                 ],
-                "summary": "Create Contact",
-                "operationId": "create-contact_post",
-                "parameters": [
-                    {
-                        "description": "home info",
-                        "name": "input",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/model.Contact"
-                        }
-                    }
-                ],
+                "summary": "Get contacts",
+                "operationId": "get-contacts",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.ResponseSuccess"
+                            "$ref": "#/definitions/handler.allContacts"
                         }
                     },
                     "400": {
@@ -251,12 +240,6 @@ const docTemplate = `{
                         "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/handler.errorResponse"
-                        }
-                    },
-                    "409": {
-                        "description": "Conflict",
-                        "schema": {
-                            "$ref": "#/definitions/handler.errorResponseData"
                         }
                     },
                     "500": {
@@ -376,7 +359,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.getAllListsResponse"
+                            "$ref": "#/definitions/model.HomeFull"
                         }
                     },
                     "400": {
@@ -438,7 +421,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.getAllListsResponse"
+                            "$ref": "#/definitions/model.HomeFull"
                         }
                     },
                     "400": {
@@ -727,7 +710,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.getAllListsResponse"
+                            "$ref": "#/definitions/model.NewsFull"
                         }
                     },
                     "400": {
@@ -789,7 +772,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.getAllListsResponse"
+                            "$ref": "#/definitions/model.NewsFull"
                         }
                     },
                     "400": {
@@ -1078,7 +1061,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.getAllListsResponse"
+                            "$ref": "#/definitions/model.ServiceFull"
                         }
                     },
                     "400": {
@@ -1140,7 +1123,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.getAllListsResponse"
+                            "$ref": "#/definitions/model.ServiceFull"
                         }
                     },
                     "400": {
@@ -1429,7 +1412,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.getAllListsResponse"
+                            "$ref": "#/definitions/model.TableFull"
                         }
                     },
                     "400": {
@@ -1491,7 +1474,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.getAllListsResponse"
+                            "$ref": "#/definitions/model.TableFull"
                         }
                     },
                     "400": {
@@ -1677,6 +1660,71 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/contact/create": {
+            "post": {
+                "description": "create contact_post",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "Create Contact",
+                "operationId": "create-contact_post",
+                "parameters": [
+                    {
+                        "description": "home info",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Contact"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ResponseSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponseData"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -1686,6 +1734,17 @@ const docTemplate = `{
                 "data": {},
                 "message": {
                     "type": "string"
+                }
+            }
+        },
+        "handler.allContacts": {
+            "type": "object",
+            "properties": {
+                "allContact": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.ContactFull"
+                    }
                 }
             }
         },
@@ -1706,17 +1765,6 @@ const docTemplate = `{
                 }
             }
         },
-        "handler.getAllListsResponse": {
-            "type": "object",
-            "properties": {
-                "data": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/model.HomeFull"
-                    }
-                }
-            }
-        },
         "model.Admin": {
             "type": "object",
             "properties": {
@@ -1733,9 +1781,6 @@ const docTemplate = `{
         "model.Contact": {
             "type": "object",
             "properties": {
-                "date": {
-                    "type": "string"
-                },
                 "firstName": {
                     "type": "string"
                 },
@@ -1749,6 +1794,32 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "typeService": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.ContactFull": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "first_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "phone_number": {
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "type_service": {
                     "type": "string"
                 }
             }
@@ -1790,6 +1861,29 @@ const docTemplate = `{
                 }
             }
         },
+        "model.NewsFull": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "post_body": {
+                    "type": "string"
+                },
+                "post_date": {
+                    "type": "string"
+                },
+                "post_img_path": {
+                    "type": "string"
+                },
+                "post_img_url": {
+                    "type": "string"
+                },
+                "post_title": {
+                    "type": "string"
+                }
+            }
+        },
         "model.NewsPost": {
             "type": "object",
             "properties": {
@@ -1804,10 +1898,56 @@ const docTemplate = `{
                 }
             }
         },
+        "model.ServiceFull": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "post_body": {
+                    "type": "string"
+                },
+                "post_date": {
+                    "type": "string"
+                },
+                "post_img_path": {
+                    "type": "string"
+                },
+                "post_img_url": {
+                    "type": "string"
+                },
+                "post_title": {
+                    "type": "string"
+                }
+            }
+        },
         "model.ServicePost": {
             "type": "object",
             "properties": {
                 "post_body": {
+                    "type": "string"
+                },
+                "post_img_url": {
+                    "type": "string"
+                },
+                "post_title": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.TableFull": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "post_body": {
+                    "type": "string"
+                },
+                "post_date": {
+                    "type": "string"
+                },
+                "post_img_path": {
                     "type": "string"
                 },
                 "post_img_url": {

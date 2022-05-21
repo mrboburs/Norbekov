@@ -149,7 +149,7 @@ func (h *Handler) UpdateService(ctx *gin.Context) {
 // @Accept  json
 // @Produce  json
 // @Param id query int true "id"
-// @Success 200 {object} getAllListsResponse
+// @Success 200 {object}  model.ServiceFull
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
@@ -178,7 +178,7 @@ func (h *Handler) GetServiceById(ctx *gin.Context) {
 // @Accept  json
 // @Produce  json
 // @Param id query int true "id"
-// @Success 200 {object} getAllListsResponse
+// @Success 200 {object}  model.ServiceFull
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse

@@ -19,14 +19,7 @@ type Configs struct {
 	DBName          string
 	DBPassword      string
 	DBSSLMode       string
-	RedisHost       string
-	RedisPort       string
-	RedisPassword   string
-	RedisDB         string
-	SMTPHost        string
-	SMTPPort        int
-	SMTPsenderEmail string
-	STMPappPassword string
+
 }
 
 func InitConfig() (cfg *Configs, err error) {
@@ -55,14 +48,7 @@ func InitConfig() (cfg *Configs, err error) {
 		DBName:          viper.GetString("db.dbname"),
 		DBSSLMode:       viper.GetString("db.sslmode"),
 		DBPassword:      os.Getenv("DB_PASSWORD"),
-		RedisHost:       viper.GetString("redis.host"),
-		RedisPort:       viper.GetString("redis.port"),
-		RedisPassword:   os.Getenv("REDIS_PASSWORD"),
-		RedisDB:         viper.GetString("redis.db"),
-		SMTPHost:        viper.GetString("smtp.host"),
-		SMTPPort:        viper.GetInt("smtp.port"),
-		SMTPsenderEmail: viper.GetString("smtp.senderemail"),
-		STMPappPassword: os.Getenv("SMTP_APP_PASSWORD"),
+		
 	}
 	return
 }

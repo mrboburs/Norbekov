@@ -73,9 +73,11 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 		table.DELETE("/delete", handler.DeleteTable)
 	}
 
-	contact := api.Group("/contact")
+	contact := router.Group("/contact")
+	contacts := api.Group("/contacts")
 	{
 		contact.POST("/create", handler.CreateContactPost)
+		contacts.GET("/get", handler.GetAllContact)
 	}
 
 	return router

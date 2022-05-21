@@ -19,8 +19,7 @@ import (
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/contact/create [post]
-//@Security ApiKeyAuth
+// @Router /contact/create [post]
 func (handler *Handler) CreateContactPost(ctx *gin.Context) {
 	logrus := handler.logrus
 	var input model.Contact
@@ -36,4 +35,33 @@ func (handler *Handler) CreateContactPost(ctx *gin.Context) {
 		return
 	}
 	ctx.JSON(http.StatusOK, ResponseSuccess{Data: Id, Message: "DONE"})
+}
+
+type allContacts struct {
+	AllContact []model.ContactFull
+}
+
+// @Summary Get contacts
+// @Tags Contact
+// @Description get  contacts
+// @ID get-contacts
+// @Accept  json
+// @Produce  json
+// @Success 200 {object} allContacts
+// @Failure 400,404 {object} errorResponse
+// @Failure 500 {object} errorResponse
+// @Failure default {object} errorResponse
+// @Router /api/contacts/get [GET]
+//@Security ApiKeyAuth
+func (handler *Handler) GetAllContact(ctx *gin.Context) {
+	logrus := handler.logrus
+
+	contacts, err := handler.services.Contact.GetAllContact(logrus)
+	if err != nil {
+		NewHandlerErrorResponse(ctx, http.StatusInternalServerError, err.Error(), logrus)
+	}
+
+	ctx.JSON(http.StatusOK, map[string]interface{}{
+		"data": contacts,
+	})
 }

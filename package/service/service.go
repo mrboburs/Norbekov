@@ -42,6 +42,7 @@ type Table interface {
 }
 type Contact interface {
 	CreateContactPost(post model.Contact, logrus *logrus.Logger) (int, error)
+	GetAllContact(logrus *logrus.Logger) (contact []model.ContactFull, err error)
 }
 type Admin interface {
 	CreateAdmin(adminData model.Admin, logrus *logrus.Logger) (int, error)

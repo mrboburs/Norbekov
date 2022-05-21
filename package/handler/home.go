@@ -148,10 +148,6 @@ func (h *Handler) updateHome(ctx *gin.Context) {
 
 }
 
-type getAllListsResponse struct {
-	Data []model.HomeFull `json:"data"`
-}
-
 // @Summary Get home
 // @Tags Home
 // @Description get home post
@@ -159,7 +155,7 @@ type getAllListsResponse struct {
 // @Accept  json
 // @Produce  json
 // @Param id query int true "id"
-// @Success 200 {object} getAllListsResponse
+// @Success 200 {object} model.HomeFull
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
@@ -188,7 +184,7 @@ func (h *Handler) GetHomeById(ctx *gin.Context) {
 // @Accept  json
 // @Produce  json
 // @Param id query int true "id"
-// @Success 200 {object} getAllListsResponse
+// @Success 200 {object} model.HomeFull
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse

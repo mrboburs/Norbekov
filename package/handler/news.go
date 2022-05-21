@@ -150,7 +150,7 @@ func (h *Handler) updateNews(ctx *gin.Context) {
 // @Accept  json
 // @Produce  json
 // @Param id query int true "id"
-// @Success 200 {object} getAllListsResponse
+// @Success 200 {object}  model.NewsFull
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
@@ -179,7 +179,7 @@ func (h *Handler) GetNewsById(ctx *gin.Context) {
 // @Accept  json
 // @Produce  json
 // @Param id query int true "id"
-// @Success 200 {object} getAllListsResponse
+// @Success 200 {object} model.NewsFull
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
