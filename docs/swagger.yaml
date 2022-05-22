@@ -289,6 +289,40 @@ paths:
       summary: Login Admin
       tags:
       - Admin
+  /api/contacts/get:
+    get:
+      consumes:
+      - application/json
+      description: get  contacts
+      operationId: get-contacts
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.allContacts'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get contacts
+      tags:
+      - Contact
   /api/home/create:
     post:
       consumes:
@@ -1045,40 +1079,6 @@ paths:
       summary: Upload Table Image
       tags:
       - Table
-  /auth/contacts/get:
-    get:
-      consumes:
-      - application/json
-      description: get  contacts
-      operationId: get-contacts
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/model.allContacts'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Get contacts
-      tags:
-      - Contact
   /contact/create:
     post:
       consumes:
