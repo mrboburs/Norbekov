@@ -4,7 +4,7 @@ import (
 	"crypto/sha1"
 	"errors"
 	"fmt"
-	// "norbekov/model"
+	"github.com/mrboburs/Norbekov/model"
 	"github.com/mrboburs/Norbekov/package/repository"
 	"github.com/mrboburs/Norbekov/util/logrus"
 	"time"

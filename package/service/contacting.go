@@ -3,7 +3,7 @@ package service
 import (
 	"github.com/mrboburs/Norbekov/model"
 	"github.com/mrboburs/Norbekov/package/repository"
-	"norbekov/util/logrus"
+	"github.com/mrboburs/Norbekov/util/logrus"
 )
 
 type ContactService struct {
