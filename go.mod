@@ -1,5 +1,5 @@
 module github.com/mrboburs/Norbekov
-// +heroku goVersion
+// +heroku goVersion go 1.18
 go 1.18
 
 require (
