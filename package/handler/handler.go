@@ -53,7 +53,7 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 		news.POST("/create", handler.CreateNewsPost)
 		news.PATCH("/upload-img/:id", handler.uploadNewsImage)
 		news.PUT("/update/:id", handler.updateNews)
-		news.GET("/get", handler.GetNewsById)
+		router.Group("/news").GET("/get", handler.GetNewsById)
 		news.DELETE("/delete", handler.DeleteNews)
 	}
 	service := api.Group("/service")
@@ -61,7 +61,7 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 		service.POST("/create", handler.CreateServicePost)
 		service.PATCH("/upload-img/:id", handler.uploadServiceImage)
 		service.PUT("/update/:id", handler.UpdateService)
-		service.GET("/get", handler.GetServiceById)
+		router.Group("/service").GET("/get", handler.GetServiceById)
 		service.DELETE("/delete", handler.DeleteService)
 	}
 	table := api.Group("/table")
@@ -69,7 +69,7 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 		table.POST("/create", handler.CreateTablePost)
 		table.PATCH("/upload-img/:id", handler.uploadTableImage)
 		table.PUT("/update/:id", handler.UpdateTable)
-		table.GET("/get", handler.GetTableById)
+		router.Group("/table").GET("/get", handler.GetTableById)
 		table.DELETE("/delete", handler.DeleteTable)
 	}
 

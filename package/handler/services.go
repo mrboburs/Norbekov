@@ -153,7 +153,7 @@ func (h *Handler) UpdateService(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/service/get [GET]
+// @Router /service/get [GET]
 func (h *Handler) GetServiceById(ctx *gin.Context) {
 	logrus := h.logrus
 	id := ctx.Query("id")
