@@ -2,10 +2,10 @@ package service
 
 import (
 	// "mediumuz/model"
+	"github.com/mrboburs/Norbekov/model"
+	"github.com/mrboburs/Norbekov/package/repository"
+	"github.com/mrboburs/Norbekov/util/logrus"
 	"mime/multipart"
-	"norbekov/model"
-	"norbekov/package/repository"
-	"norbekov/util/logrus"
 	// "mediumuz/util/logrus"
 	// "mime/multipart"
 )

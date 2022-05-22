@@ -4,12 +4,12 @@ import (
 	// "fmt"
 	"fmt"
 	// "norbekov/docs"
-	"norbekov/docs"
-	"norbekov/package/service"
-	"norbekov/util/logrus"
+	"github.com/mrboburs/Norbekov/docs"
+	"github.com/mrboburs/Norbekov/package/service"
+	"github.com/mrboburs/Norbekov/util/logrus"
 
-	"norbekov/configs"
-	_ "norbekov/docs"
+	"github.com/mrboburs/Norbekov/configs"
+	_ "github.com/mrboburs/Norbekov/docs"
 
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"

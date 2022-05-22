@@ -2,7 +2,7 @@ package handler
 
 import (
 	"errors"
-	"norbekov/util/logrus"
+	"github.com/mrboburs/Norbekov/util/logrus"
 
 	"net/http"
 	"strings"

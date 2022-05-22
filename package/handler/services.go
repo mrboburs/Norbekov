@@ -2,7 +2,7 @@ package handler
 
 import (
 	"net/http"
-	"norbekov/model"
+	"github.com/mrboburs/Norbekov/model"
 	"strconv"
 
 	"github.com/gin-gonic/gin"

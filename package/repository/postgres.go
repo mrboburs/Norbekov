@@ -2,7 +2,7 @@ package repository
 
 import (
 	"fmt"
-	"norbekov/util/logrus"
+	"github.com/mrboburs/Norbekov/util/logrus"
 
 	"github.com/jmoiron/sqlx"
 )

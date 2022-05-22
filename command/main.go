@@ -3,14 +3,20 @@ package main
 import (
 	// "fmt"
 	// "fmt"
-	"norbekov/configs"
-	"norbekov/package/handler"
-	"norbekov/package/repository"
-	"norbekov/package/service"
-	"norbekov/server"
-	"norbekov/util/logrus"
+	// "norbekov/configs"
+	// "norbekov/package/handler"
+	// "norbekov/package/repository"
+	// "norbekov/package/service"
+	// "norbekov/server"
+	// "norbekov/util/logrus"
 
 	_ "github.com/lib/pq"
+	"github.com/mrboburs/Norbekov/configs"
+	"github.com/mrboburs/Norbekov/package/handler"
+	"github.com/mrboburs/Norbekov/package/repository"
+	"github.com/mrboburs/Norbekov/package/service"
+	"github.com/mrboburs/Norbekov/server"
+	"github.com/mrboburs/Norbekov/util/logrus"
 )
 
 // @title Norbekov API

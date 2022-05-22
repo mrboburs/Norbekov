@@ -5,8 +5,8 @@ import (
 	// "norbekov/util/logrus"
 
 	// "github.com/go-redis/redis"
-	"norbekov/model"
-	"norbekov/util/logrus"
+	"github.com/mrboburs/Norbekov/model"
+	"github.com/mrboburs/Norbekov/util/logrus"
 
 	"github.com/jmoiron/sqlx"
 )

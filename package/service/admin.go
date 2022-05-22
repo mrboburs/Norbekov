@@ -4,9 +4,9 @@ import (
 	"crypto/sha1"
 	"errors"
 	"fmt"
-	"norbekov/model"
-	"norbekov/package/repository"
-	"norbekov/util/logrus"
+	// "norbekov/model"
+	"github.com/mrboburs/Norbekov/package/repository"
+	"github.com/mrboburs/Norbekov/util/logrus"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"

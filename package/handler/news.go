@@ -8,7 +8,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"norbekov/model"
+	"github.com/mrboburs/Norbekov/model"
 	// "norbekov/util/logrus"
 )
 

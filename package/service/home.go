@@ -1,10 +1,10 @@
 package service
 
 import (
+	"github.com/mrboburs/Norbekov/configs"
+	"github.com/mrboburs/Norbekov/model"
 	"io"
 	"mime/multipart"
-	"norbekov/configs"
-	"norbekov/model"
 	"norbekov/package/repository"
 	"norbekov/util/logrus"
 	"os"

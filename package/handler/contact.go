@@ -2,9 +2,10 @@ package handler
 
 import (
 	"net/http"
-	"norbekov/model"
 
 	"github.com/gin-gonic/gin"
+	"github.com/mrboburs/Norbekov/model"
+	// "norbekov/model"
 )
 
 // @Summary Create Contact

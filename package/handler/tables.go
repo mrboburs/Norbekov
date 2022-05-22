@@ -1,8 +1,8 @@
 package handler
 
 import (
+	"github.com/mrboburs/Norbekov/model"
 	"net/http"
-	"norbekov/model"
 	"strconv"
 
 	"github.com/gin-gonic/gin"

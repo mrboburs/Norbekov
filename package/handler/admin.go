@@ -2,10 +2,11 @@ package handler
 
 import (
 	"net/http"
-	"norbekov/model"
+	// "norbekov/model"
 	// "norbekov/util/logrus"
 
 	"github.com/gin-gonic/gin"
+	"github.com/mrboburs/Norbekov/model"
 )
 
 // @Summary Create Admin

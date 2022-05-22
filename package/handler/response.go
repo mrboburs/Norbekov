@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"norbekov/util/logrus"
+	"github.com/mrboburs/Norbekov/util/logrus"
 
 	"github.com/gin-gonic/gin"
 )

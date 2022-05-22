@@ -6,8 +6,8 @@ import (
 	// "norbekov/util/logrus"
 
 	"fmt"
-	"norbekov/model"
-	"norbekov/util/logrus"
+	"github.com/mrboburs/Norbekov/model"
+	"github.com/mrboburs/Norbekov/util/logrus"
 	"time"
 
 	"github.com/jmoiron/sqlx"

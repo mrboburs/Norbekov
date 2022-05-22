@@ -1,8 +1,8 @@
 package service
 
 import (
-	"norbekov/model"
-	"norbekov/package/repository"
+	"github.com/mrboburs/Norbekov/model"
+	"github.com/mrboburs/Norbekov/package/repository"
 	"norbekov/util/logrus"
 )
 
