@@ -6,13 +6,6 @@ definitions:
       message:
         type: string
     type: object
-  handler.allContacts:
-    properties:
-      allContact:
-        items:
-          $ref: '#/definitions/model.ContactFull'
-        type: array
-    type: object
   handler.errorResponse:
     properties:
       message:
@@ -159,6 +152,13 @@ definitions:
       post_title:
         type: string
     type: object
+  model.allContacts:
+    properties:
+      allContact:
+        items:
+          $ref: '#/definitions/model.ContactFull'
+        type: array
+    type: object
 host: localhost:8080
 info:
   contact:
@@ -289,40 +289,6 @@ paths:
       summary: Login Admin
       tags:
       - Admin
-  /api/contacts/get:
-    get:
-      consumes:
-      - application/json
-      description: get  contacts
-      operationId: get-contacts
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/handler.allContacts'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Get contacts
-      tags:
-      - Contact
   /api/home/create:
     post:
       consumes:
@@ -406,46 +372,6 @@ paths:
       security:
       - ApiKeyAuth: []
       summary: Get Delete Post
-      tags:
-      - Home
-  /api/home/get:
-    get:
-      consumes:
-      - application/json
-      description: get home post
-      operationId: get-home
-      parameters:
-      - description: id
-        in: query
-        name: id
-        required: true
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/model.HomeFull'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Get home
       tags:
       - Home
   /api/home/update/{id}:
@@ -672,8 +598,6 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
       summary: Get news
       tags:
       - News
@@ -901,8 +825,6 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
       summary: Get Service
       tags:
       - Service
@@ -1130,8 +1052,6 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
       summary: Get table
       tags:
       - Table
@@ -1239,6 +1159,40 @@ paths:
       summary: Upload Table Image
       tags:
       - Table
+  /auth/contacts/get:
+    get:
+      consumes:
+      - application/json
+      description: get  contacts
+      operationId: get-contacts
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.allContacts'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get contacts
+      tags:
+      - Contact
   /contact/create:
     post:
       consumes:
@@ -1282,6 +1236,44 @@ paths:
       summary: Create Contact
       tags:
       - Contact
+  /home/get:
+    get:
+      consumes:
+      - application/json
+      description: get home post
+      operationId: get-home
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.HomeFull'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      summary: Get home
+      tags:
+      - Home
 securityDefinitions:
   ApiKeyAuth:
     in: header

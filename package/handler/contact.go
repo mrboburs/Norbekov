@@ -47,7 +47,7 @@ func (handler *Handler) CreateContactPost(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/contacts/get [GET]
+// @Router /auth/contacts/get [GET]
 //@Security ApiKeyAuth
 func (handler *Handler) GetAllContact(ctx *gin.Context) {
 	logrus := handler.logrus

@@ -9,6 +9,7 @@ import (
 )
 
 type Configs struct {
+	AppName     string
 	ServiceHost string
 	HTTPPort    string
 	Version     string
@@ -36,13 +37,16 @@ func InitConfig() (cfg *Configs, err error) {
 	}
 
 	cfg = &Configs{
-
-		DBHost:     viper.GetString("db.host"),
-		DBPort:     viper.GetString("db.port"),
-		DBUsername: viper.GetString("db.username"),
-		DBName:     viper.GetString("db.dbname"),
-		DBSSLMode:  viper.GetString("db.sslmode"),
-		DBPassword: os.Getenv("DB_PASSWORD"),
+		AppName:     viper.GetString("app.name"),
+		ServiceHost: viper.GetString("app.server"),
+		HTTPPort:    viper.GetString("app.port"),
+		Version:     viper.GetString("app.version"),
+		DBHost:      viper.GetString("db.host"),
+		DBPort:      viper.GetString("db.port"),
+		DBUsername:  viper.GetString("db.username"),
+		DBName:      viper.GetString("db.dbname"),
+		DBSSLMode:   viper.GetString("db.sslmode"),
+		DBPassword:  os.Getenv("DB_PASSWORD"),
 	}
 	return
 }

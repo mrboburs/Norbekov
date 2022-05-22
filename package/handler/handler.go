@@ -45,7 +45,7 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 		home.POST("/create", handler.CreateHomePost)
 		home.PATCH("/upload-img/:id", handler.uploadHomeImage)
 		home.PUT("/update/:id", handler.updateHome)
-		home.GET("/get", handler.GetHomeById)
+		router.Group("/home").GET("/get", handler.GetHomeById)
 		home.DELETE("/delete", handler.DeleteHome)
 	}
 	news := api.Group("/news")

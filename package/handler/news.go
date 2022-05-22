@@ -155,7 +155,6 @@ func (h *Handler) updateNews(ctx *gin.Context) {
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
 // @Router /api/news/get [GET]
-//@Security ApiKeyAuth
 func (h *Handler) GetNewsById(ctx *gin.Context) {
 	logrus := h.logrus
 	id := ctx.Query("id")

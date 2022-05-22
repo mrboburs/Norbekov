@@ -151,7 +151,6 @@ func (h *Handler) UpdateTable(ctx *gin.Context) {
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
 // @Router /api/table/get [GET]
-//@Security ApiKeyAuth
 func (h *Handler) GetTableById(ctx *gin.Context) {
 	logrus := h.logrus
 	id := ctx.Query("id")

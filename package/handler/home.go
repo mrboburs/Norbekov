@@ -159,8 +159,7 @@ func (h *Handler) updateHome(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/home/get [GET]
-//@Security ApiKeyAuth
+// @Router /home/get [GET]
 func (h *Handler) GetHomeById(ctx *gin.Context) {
 	logrus := h.logrus
 	id := ctx.Query("id")
