@@ -18,7 +18,7 @@ import (
 // @description API Server for Norbekov App
 // @host localhost:8080
 // @BasePath /
-// @securityDefinitions.apikey ApiKeyAuth
+// @securityDefinitions.apikey ApiKeyAuthz
 // @in header
 // @name Authorization
 // @contact.name   Mr Bobur
