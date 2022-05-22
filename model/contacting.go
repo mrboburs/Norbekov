@@ -23,3 +23,6 @@ type ContactFull struct {
 	Text        string `json:"text" db:"text"`
 	Created_At  string `json:"created_at" db:"created_at"`
 }
+type allContacts struct {
+	AllContact []ContactFull
+}

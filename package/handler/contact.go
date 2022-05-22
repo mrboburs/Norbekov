@@ -37,17 +37,13 @@ func (handler *Handler) CreateContactPost(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, ResponseSuccess{Data: Id, Message: "DONE"})
 }
 
-type allContacts struct {
-	AllContact []model.ContactFull
-}
-
 // @Summary Get contacts
 // @Tags Contact
 // @Description get  contacts
 // @ID get-contacts
 // @Accept  json
 // @Produce  json
-// @Success 200 {object} allContacts
+// @Success 200 {object} model.allContacts
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
