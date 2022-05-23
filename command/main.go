@@ -24,7 +24,7 @@ import (
 // @title Norbekov API
 // @version 1.0
 // @description API Server for Norbekov App
-// @host dumbo.db.elephantsql.com
+// @host http://norbekov.herokuapp.com/swagger/index.html#/Admin/create-admin_post
 // @BasePath /
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header
