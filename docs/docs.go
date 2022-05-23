@@ -2201,7 +2201,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "http://norbekov.herokuapp.com/swagger/index.html#/Admin/create-admin_post",
+	Host:             "http://norbekov.herokuapp.com/swagger/index.html",
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "Norbekov API",
