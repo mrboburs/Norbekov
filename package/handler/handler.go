@@ -38,35 +38,39 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	}
 	api := router.Group("/api", handler.userIdentity)
 	home := api.Group("/home")
+	homeGet := router.Group("/home")
 	{
 		home.POST("/create", handler.CreateHomePost)
 		home.PATCH("/upload-img/:id", handler.uploadHomeImage)
 		home.PUT("/update/:id", handler.updateHome)
-		router.Group("/home").GET("/get", handler.GetHomeById)
+		homeGet.GET("/get", handler.GetHomeById)
 		home.DELETE("/delete", handler.DeleteHome)
 	}
 	news := api.Group("/news")
+	newsGet := router.Group("/news")
 	{
 		news.POST("/create", handler.CreateNewsPost)
 		news.PATCH("/upload-img/:id", handler.uploadNewsImage)
 		news.PUT("/update/:id", handler.updateNews)
-		router.Group("/news").GET("/get", handler.GetNewsById)
+		newsGet.GET("/get", handler.GetNewsById)
 		news.DELETE("/delete", handler.DeleteNews)
 	}
 	service := api.Group("/service")
+	serviceGet := router.Group("/service")
 	{
 		service.POST("/create", handler.CreateServicePost)
 		service.PATCH("/upload-img/:id", handler.uploadServiceImage)
 		service.PUT("/update/:id", handler.UpdateService)
-		router.Group("/service").GET("/get", handler.GetServiceById)
+		serviceGet.GET("/get", handler.GetServiceById)
 		service.DELETE("/delete", handler.DeleteService)
 	}
 	table := api.Group("/table")
+	tableGet := router.Group("/table")
 	{
 		table.POST("/create", handler.CreateTablePost)
 		table.PATCH("/upload-img/:id", handler.uploadTableImage)
 		table.PUT("/update/:id", handler.UpdateTable)
-		router.Group("/table").GET("/get", handler.GetTableById)
+		tableGet.GET("/get", handler.GetTableById)
 		table.DELETE("/delete", handler.DeleteTable)
 	}
 
