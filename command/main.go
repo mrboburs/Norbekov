@@ -24,7 +24,7 @@ import (
 // @title Norbekov API
 // @version 1.0
 // @description API Server for Norbekov App
-// @host localhost:8080
+// @host dumbo.db.elephantsql.com
 // @BasePath /
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header
