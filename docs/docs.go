@@ -202,7 +202,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/contacts/get": {
+        "/api/contacts": {
             "get": {
                 "security": [
                     {
@@ -255,7 +255,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/home/create": {
+        "/api/home": {
             "post": {
                 "security": [
                     {
@@ -323,9 +323,7 @@ const docTemplate = `{
                         }
                     }
                 }
-            }
-        },
-        "/api/home/delete": {
+            },
             "delete": {
                 "security": [
                     {
@@ -387,7 +385,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/home/update/{id}": {
+        "/api/home/{id}": {
             "put": {
                 "security": [
                     {
@@ -462,9 +460,7 @@ const docTemplate = `{
                         }
                     }
                 }
-            }
-        },
-        "/api/home/upload-img/{id}": {
+            },
             "patch": {
                 "security": [
                     {
@@ -544,7 +540,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/news/create": {
+        "/api/news": {
             "post": {
                 "security": [
                     {
@@ -612,9 +608,7 @@ const docTemplate = `{
                         }
                     }
                 }
-            }
-        },
-        "/api/news/delete": {
+            },
             "delete": {
                 "security": [
                     {
@@ -676,7 +670,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/news/update/{id}": {
+        "/api/news/{id}": {
             "put": {
                 "security": [
                     {
@@ -751,9 +745,7 @@ const docTemplate = `{
                         }
                     }
                 }
-            }
-        },
-        "/api/news/upload-img/{id}": {
+            },
             "patch": {
                 "security": [
                     {
@@ -833,7 +825,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/service/create": {
+        "/api/service": {
             "post": {
                 "security": [
                     {
@@ -903,7 +895,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/service/delete": {
+        "/api/service/": {
             "delete": {
                 "security": [
                     {
@@ -965,7 +957,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/service/update/{id}": {
+        "/api/service/{id}": {
             "put": {
                 "security": [
                     {
@@ -1040,9 +1032,7 @@ const docTemplate = `{
                         }
                     }
                 }
-            }
-        },
-        "/api/service/upload-img/{id}": {
+            },
             "patch": {
                 "security": [
                     {
@@ -1122,7 +1112,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/table/create": {
+        "/api/table": {
             "post": {
                 "security": [
                     {
@@ -1190,9 +1180,7 @@ const docTemplate = `{
                         }
                     }
                 }
-            }
-        },
-        "/api/table/delete": {
+            },
             "delete": {
                 "security": [
                     {
@@ -1254,7 +1242,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/table/update/{id}": {
+        "/api/table/{id}": {
             "put": {
                 "security": [
                     {
@@ -1329,9 +1317,7 @@ const docTemplate = `{
                         }
                     }
                 }
-            }
-        },
-        "/api/table/upload-img/{id}": {
+            },
             "patch": {
                 "security": [
                     {
@@ -1411,7 +1397,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/contact/create": {
+        "/contact": {
             "post": {
                 "description": "create contact_post",
                 "consumes": [
@@ -1476,7 +1462,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/home/get": {
+        "/home": {
             "get": {
                 "description": "get home post",
                 "consumes": [
@@ -1533,7 +1519,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/news/get": {
+        "/news": {
             "get": {
                 "description": "get news post",
                 "consumes": [
@@ -1590,7 +1576,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/service/get": {
+        "/service/": {
             "get": {
                 "description": "get service post",
                 "consumes": [
@@ -1647,7 +1633,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/table/get": {
+        "/table": {
             "get": {
                 "description": "get table post",
                 "consumes": [

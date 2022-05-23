@@ -25,7 +25,7 @@ import (
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/home/create [post]
+// @Router /api/home [post]
 //@Security ApiKeyAuth
 func (handler *Handler) CreateHomePost(ctx *gin.Context) {
 	logrus := handler.logrus
@@ -66,7 +66,7 @@ func (handler *Handler) CreateHomePost(ctx *gin.Context) {
 // @Failure 409 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router   /api/home/upload-img/{id} [PATCH]
+// @Router   /api/home/{id} [PATCH]
 //@Security ApiKeyAuth
 func (handler *Handler) uploadHomeImage(ctx *gin.Context) {
 	logrus := handler.logrus
@@ -117,7 +117,7 @@ func (handler *Handler) uploadHomeImage(ctx *gin.Context) {
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/home/update/{id} [PUT]
+// @Router /api/home/{id} [PUT]
 //@Security ApiKeyAuth
 func (h *Handler) updateHome(ctx *gin.Context) {
 	logrus := h.logrus
@@ -159,7 +159,7 @@ func (h *Handler) updateHome(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /home/get [GET]
+// @Router /home [GET]
 func (h *Handler) GetHomeById(ctx *gin.Context) {
 	logrus := h.logrus
 	id := ctx.Query("id")
@@ -187,7 +187,7 @@ func (h *Handler) GetHomeById(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/home/delete [DELETE]
+// @Router /api/home [DELETE]
 //@Security ApiKeyAuth
 func (h *Handler) DeleteHome(ctx *gin.Context) {
 

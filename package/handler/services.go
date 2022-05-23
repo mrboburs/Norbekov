@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"net/http"
 	"github.com/mrboburs/Norbekov/model"
+	"net/http"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
@@ -20,7 +20,7 @@ import (
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/service/create [post]
+// @Router /api/service [post]
 //@Security ApiKeyAuth
 func (handler *Handler) CreateServicePost(ctx *gin.Context) {
 	logrus := handler.logrus
@@ -60,7 +60,7 @@ func (handler *Handler) CreateServicePost(ctx *gin.Context) {
 // @Failure 409 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router   /api/service/upload-img/{id} [PATCH]
+// @Router   /api/service/{id} [PATCH]
 //@Security ApiKeyAuth
 func (handler *Handler) uploadServiceImage(ctx *gin.Context) {
 	logrus := handler.logrus
@@ -111,7 +111,7 @@ func (handler *Handler) uploadServiceImage(ctx *gin.Context) {
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/service/update/{id} [PUT]
+// @Router /api/service/{id} [PUT]
 //@Security ApiKeyAuth
 func (h *Handler) UpdateService(ctx *gin.Context) {
 	logrus := h.logrus
@@ -153,7 +153,7 @@ func (h *Handler) UpdateService(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /service/get [GET]
+// @Router /service/ [GET]
 func (h *Handler) GetServiceById(ctx *gin.Context) {
 	logrus := h.logrus
 	id := ctx.Query("id")
@@ -181,7 +181,7 @@ func (h *Handler) GetServiceById(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/service/delete [DELETE]
+// @Router /api/service/ [DELETE]
 //@Security ApiKeyAuth
 func (h *Handler) DeleteService(ctx *gin.Context) {
 

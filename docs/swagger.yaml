@@ -288,7 +288,7 @@ paths:
       summary: Login Admin
       tags:
       - Admin
-  /api/contacts/get:
+  /api/contacts:
     get:
       consumes:
       - application/json
@@ -322,7 +322,46 @@ paths:
       summary: Get contacts
       tags:
       - Contact
-  /api/home/create:
+  /api/home:
+    delete:
+      consumes:
+      - application/json
+      description: delete post
+      operationId: delete-posts
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.HomeFull'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get Delete Post
+      tags:
+      - Home
     post:
       consumes:
       - application/json
@@ -367,97 +406,7 @@ paths:
       summary: Create HomePost
       tags:
       - Home
-  /api/home/delete:
-    delete:
-      consumes:
-      - application/json
-      description: delete post
-      operationId: delete-posts
-      parameters:
-      - description: id
-        in: query
-        name: id
-        required: true
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/model.HomeFull'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Get Delete Post
-      tags:
-      - Home
-  /api/home/update/{id}:
-    put:
-      consumes:
-      - application/json
-      description: Update home by id
-      operationId: update-home-id
-      parameters:
-      - description: Param ID
-        in: path
-        name: id
-        required: true
-        type: integer
-      - description: home info
-        in: body
-        name: input
-        required: true
-        schema:
-          $ref: '#/definitions/model.HomePost'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/handler.ResponseSuccess'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "409":
-          description: Conflict
-          schema:
-            $ref: '#/definitions/handler.errorResponseData'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Update  Home By ID
-      tags:
-      - Home
-  /api/home/upload-img/{id}:
+  /api/home/{id}:
     patch:
       consumes:
       - application/json
@@ -511,7 +460,95 @@ paths:
       summary: Upload Home Image
       tags:
       - Home
-  /api/news/create:
+    put:
+      consumes:
+      - application/json
+      description: Update home by id
+      operationId: update-home-id
+      parameters:
+      - description: Param ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: home info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/model.HomePost'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ResponseSuccess'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/handler.errorResponseData'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update  Home By ID
+      tags:
+      - Home
+  /api/news:
+    delete:
+      consumes:
+      - application/json
+      description: delete news
+      operationId: delete-news
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.NewsFull'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get Delete news
+      tags:
+      - News
     post:
       consumes:
       - application/json
@@ -556,97 +593,7 @@ paths:
       summary: Create NewsPost
       tags:
       - News
-  /api/news/delete:
-    delete:
-      consumes:
-      - application/json
-      description: delete news
-      operationId: delete-news
-      parameters:
-      - description: id
-        in: query
-        name: id
-        required: true
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/model.NewsFull'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Get Delete news
-      tags:
-      - News
-  /api/news/update/{id}:
-    put:
-      consumes:
-      - application/json
-      description: Update news by id
-      operationId: update-news-id
-      parameters:
-      - description: Param ID
-        in: path
-        name: id
-        required: true
-        type: integer
-      - description: home info
-        in: body
-        name: input
-        required: true
-        schema:
-          $ref: '#/definitions/model.NewsPost'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/handler.ResponseSuccess'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "409":
-          description: Conflict
-          schema:
-            $ref: '#/definitions/handler.errorResponseData'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Update  News By ID
-      tags:
-      - News
-  /api/news/upload-img/{id}:
+  /api/news/{id}:
     patch:
       consumes:
       - application/json
@@ -700,7 +647,56 @@ paths:
       summary: Upload News Image
       tags:
       - News
-  /api/service/create:
+    put:
+      consumes:
+      - application/json
+      description: Update news by id
+      operationId: update-news-id
+      parameters:
+      - description: Param ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: home info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/model.NewsPost'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ResponseSuccess'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/handler.errorResponseData'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update  News By ID
+      tags:
+      - News
+  /api/service:
     post:
       consumes:
       - application/json
@@ -745,7 +741,7 @@ paths:
       summary: Create ServicePost
       tags:
       - Service
-  /api/service/delete:
+  /api/service/:
     delete:
       consumes:
       - application/json
@@ -785,57 +781,7 @@ paths:
       summary: Get Delete service
       tags:
       - Service
-  /api/service/update/{id}:
-    put:
-      consumes:
-      - application/json
-      description: Update service by id
-      operationId: update-service-id
-      parameters:
-      - description: Param ID
-        in: path
-        name: id
-        required: true
-        type: integer
-      - description: home info
-        in: body
-        name: input
-        required: true
-        schema:
-          $ref: '#/definitions/model.ServicePost'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/handler.ResponseSuccess'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "409":
-          description: Conflict
-          schema:
-            $ref: '#/definitions/handler.errorResponseData'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Update  Service By ID
-      tags:
-      - Service
-  /api/service/upload-img/{id}:
+  /api/service/{id}:
     patch:
       consumes:
       - application/json
@@ -889,7 +835,95 @@ paths:
       summary: Upload Service Image
       tags:
       - Service
-  /api/table/create:
+    put:
+      consumes:
+      - application/json
+      description: Update service by id
+      operationId: update-service-id
+      parameters:
+      - description: Param ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: home info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/model.ServicePost'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ResponseSuccess'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/handler.errorResponseData'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update  Service By ID
+      tags:
+      - Service
+  /api/table:
+    delete:
+      consumes:
+      - application/json
+      description: delete table
+      operationId: delete-table
+      parameters:
+      - description: id
+        in: query
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TableFull'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get Delete table
+      tags:
+      - Table
     post:
       consumes:
       - application/json
@@ -934,97 +968,7 @@ paths:
       summary: Create TablePost
       tags:
       - Table
-  /api/table/delete:
-    delete:
-      consumes:
-      - application/json
-      description: delete table
-      operationId: delete-table
-      parameters:
-      - description: id
-        in: query
-        name: id
-        required: true
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/model.TableFull'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Get Delete table
-      tags:
-      - Table
-  /api/table/update/{id}:
-    put:
-      consumes:
-      - application/json
-      description: Update Table by id
-      operationId: update-table-id
-      parameters:
-      - description: Param ID
-        in: path
-        name: id
-        required: true
-        type: integer
-      - description: home info
-        in: body
-        name: input
-        required: true
-        schema:
-          $ref: '#/definitions/model.NewsPost'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/handler.ResponseSuccess'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "409":
-          description: Conflict
-          schema:
-            $ref: '#/definitions/handler.errorResponseData'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Update  Table By ID
-      tags:
-      - Table
-  /api/table/upload-img/{id}:
+  /api/table/{id}:
     patch:
       consumes:
       - application/json
@@ -1078,7 +1022,56 @@ paths:
       summary: Upload Table Image
       tags:
       - Table
-  /contact/create:
+    put:
+      consumes:
+      - application/json
+      description: Update Table by id
+      operationId: update-table-id
+      parameters:
+      - description: Param ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: home info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/model.NewsPost'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ResponseSuccess'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/handler.errorResponseData'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update  Table By ID
+      tags:
+      - Table
+  /contact:
     post:
       consumes:
       - application/json
@@ -1121,7 +1114,7 @@ paths:
       summary: Create Contact
       tags:
       - Contact
-  /home/get:
+  /home:
     get:
       consumes:
       - application/json
@@ -1159,7 +1152,7 @@ paths:
       summary: Get home
       tags:
       - Home
-  /news/get:
+  /news:
     get:
       consumes:
       - application/json
@@ -1197,7 +1190,7 @@ paths:
       summary: Get news
       tags:
       - News
-  /service/get:
+  /service/:
     get:
       consumes:
       - application/json
@@ -1235,7 +1228,7 @@ paths:
       summary: Get Service
       tags:
       - Service
-  /table/get:
+  /table:
     get:
       consumes:
       - application/json

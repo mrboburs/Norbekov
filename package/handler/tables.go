@@ -20,7 +20,7 @@ import (
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/table/create [post]
+// @Router /api/table [post]
 //@Security ApiKeyAuth
 func (handler *Handler) CreateTablePost(ctx *gin.Context) {
 	logrus := handler.logrus
@@ -57,7 +57,7 @@ func (handler *Handler) CreateTablePost(ctx *gin.Context) {
 // @Failure 409 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router   /api/table/upload-img/{id} [PATCH]
+// @Router   /api/table/{id} [PATCH]
 //@Security ApiKeyAuth
 func (handler *Handler) uploadTableImage(ctx *gin.Context) {
 	logrus := handler.logrus
@@ -108,7 +108,7 @@ func (handler *Handler) uploadTableImage(ctx *gin.Context) {
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/table/update/{id} [PUT]
+// @Router /api/table/{id} [PUT]
 //@Security ApiKeyAuth
 func (h *Handler) UpdateTable(ctx *gin.Context) {
 	logrus := h.logrus
@@ -150,7 +150,7 @@ func (h *Handler) UpdateTable(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /table/get [GET]
+// @Router /table [GET]
 func (h *Handler) GetTableById(ctx *gin.Context) {
 	logrus := h.logrus
 	id := ctx.Query("id")
@@ -178,7 +178,7 @@ func (h *Handler) GetTableById(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/table/delete [DELETE]
+// @Router /api/table [DELETE]
 //@Security ApiKeyAuth
 func (h *Handler) DeleteTable(ctx *gin.Context) {
 

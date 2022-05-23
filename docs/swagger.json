@@ -195,7 +195,7 @@
                 }
             }
         },
-        "/api/contacts/get": {
+        "/api/contacts": {
             "get": {
                 "security": [
                     {
@@ -248,7 +248,7 @@
                 }
             }
         },
-        "/api/home/create": {
+        "/api/home": {
             "post": {
                 "security": [
                     {
@@ -316,9 +316,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/api/home/delete": {
+            },
             "delete": {
                 "security": [
                     {
@@ -380,7 +378,7 @@
                 }
             }
         },
-        "/api/home/update/{id}": {
+        "/api/home/{id}": {
             "put": {
                 "security": [
                     {
@@ -455,9 +453,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/api/home/upload-img/{id}": {
+            },
             "patch": {
                 "security": [
                     {
@@ -537,7 +533,7 @@
                 }
             }
         },
-        "/api/news/create": {
+        "/api/news": {
             "post": {
                 "security": [
                     {
@@ -605,9 +601,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/api/news/delete": {
+            },
             "delete": {
                 "security": [
                     {
@@ -669,7 +663,7 @@
                 }
             }
         },
-        "/api/news/update/{id}": {
+        "/api/news/{id}": {
             "put": {
                 "security": [
                     {
@@ -744,9 +738,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/api/news/upload-img/{id}": {
+            },
             "patch": {
                 "security": [
                     {
@@ -826,7 +818,7 @@
                 }
             }
         },
-        "/api/service/create": {
+        "/api/service": {
             "post": {
                 "security": [
                     {
@@ -896,7 +888,7 @@
                 }
             }
         },
-        "/api/service/delete": {
+        "/api/service/": {
             "delete": {
                 "security": [
                     {
@@ -958,7 +950,7 @@
                 }
             }
         },
-        "/api/service/update/{id}": {
+        "/api/service/{id}": {
             "put": {
                 "security": [
                     {
@@ -1033,9 +1025,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/api/service/upload-img/{id}": {
+            },
             "patch": {
                 "security": [
                     {
@@ -1115,7 +1105,7 @@
                 }
             }
         },
-        "/api/table/create": {
+        "/api/table": {
             "post": {
                 "security": [
                     {
@@ -1183,9 +1173,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/api/table/delete": {
+            },
             "delete": {
                 "security": [
                     {
@@ -1247,7 +1235,7 @@
                 }
             }
         },
-        "/api/table/update/{id}": {
+        "/api/table/{id}": {
             "put": {
                 "security": [
                     {
@@ -1322,9 +1310,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/api/table/upload-img/{id}": {
+            },
             "patch": {
                 "security": [
                     {
@@ -1404,7 +1390,7 @@
                 }
             }
         },
-        "/contact/create": {
+        "/contact": {
             "post": {
                 "description": "create contact_post",
                 "consumes": [
@@ -1469,7 +1455,7 @@
                 }
             }
         },
-        "/home/get": {
+        "/home": {
             "get": {
                 "description": "get home post",
                 "consumes": [
@@ -1526,7 +1512,7 @@
                 }
             }
         },
-        "/news/get": {
+        "/news": {
             "get": {
                 "description": "get news post",
                 "consumes": [
@@ -1583,7 +1569,7 @@
                 }
             }
         },
-        "/service/get": {
+        "/service/": {
             "get": {
                 "description": "get service post",
                 "consumes": [
@@ -1640,7 +1626,7 @@
                 }
             }
         },
-        "/table/get": {
+        "/table": {
             "get": {
                 "description": "get table post",
                 "consumes": [
