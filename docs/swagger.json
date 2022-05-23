@@ -8,7 +8,7 @@
         },
         "version": "1.0"
     },
-    "host": "norbekov.herokuapp.com/swagger/index.html",
+    "host": "norbekov.herokuapp.com",
     "basePath": "/",
     "paths": {
         "/admin/create": {
