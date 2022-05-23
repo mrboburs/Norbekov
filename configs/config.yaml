@@ -1,8 +1,8 @@
 app:
-  name: norbekov
+ 
   host: localhost
   port: '8080'
-  version: '1.0'
+ 
 
 db:
   dbname: postgres
