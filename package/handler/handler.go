@@ -2,7 +2,7 @@ package handler
 
 import (
 	// "fmt"
-	"fmt"
+	// "fmt"
 	// "norbekov/docs"
 	"github.com/mrboburs/Norbekov/docs"
 	"github.com/mrboburs/Norbekov/package/service"
@@ -19,16 +19,13 @@ import (
 type Handler struct {
 	services *service.Service
 	logrus   *logrus.Logger
-	config   *configs.Configs
 }
 
 func NewHandler(services *service.Service, logrus *logrus.Logger, config *configs.Configs) *Handler {
-	return &Handler{services: services, logrus: logrus, config: config}
+	return &Handler{services: services, logrus: logrus}
 }
 
 func (handler *Handler) InitRoutes() *gin.Engine {
-	config := handler.config
-	fmt.Println(config)
 
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()

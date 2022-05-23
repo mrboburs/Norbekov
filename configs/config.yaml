@@ -1,5 +1,5 @@
 app:
-  name: Norbekov
+  name: norbekov
   host: localhost
   port: '8080'
   version: '1.0'
