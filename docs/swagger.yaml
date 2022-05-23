@@ -161,8 +161,7 @@ definitions:
     type: object
 host: localhost:8080
 info:
-  contact:
-    name: Mr Bobur
+  contact: {}
   description: API Server for Norbekov App
   title: Norbekov API
   version: "1.0"

@@ -40,45 +40,45 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	home := api.Group("/home")
 	homeGet := router.Group("/home")
 	{
-		home.POST("/create", handler.CreateHomePost)
-		home.PATCH("/upload-img/:id", handler.uploadHomeImage)
-		home.PUT("/update/:id", handler.updateHome)
-		homeGet.GET("/get", handler.GetHomeById)
-		home.DELETE("/delete", handler.DeleteHome)
+		home.POST("/", handler.CreateHomePost)
+		home.PATCH("/:id", handler.uploadHomeImage)
+		home.PUT("/:id", handler.updateHome)
+		homeGet.GET("/", handler.GetHomeById)
+		home.DELETE("/", handler.DeleteHome)
 	}
 	news := api.Group("/news")
 	newsGet := router.Group("/news")
 	{
-		news.POST("/create", handler.CreateNewsPost)
-		news.PATCH("/upload-img/:id", handler.uploadNewsImage)
-		news.PUT("/update/:id", handler.updateNews)
-		newsGet.GET("/get", handler.GetNewsById)
-		news.DELETE("/delete", handler.DeleteNews)
+		news.POST("/", handler.CreateNewsPost)
+		news.PATCH("/:id", handler.uploadNewsImage)
+		news.PUT("/:id", handler.updateNews)
+		newsGet.GET("/", handler.GetNewsById)
+		news.DELETE("/", handler.DeleteNews)
 	}
 	service := api.Group("/service")
 	serviceGet := router.Group("/service")
 	{
-		service.POST("/create", handler.CreateServicePost)
-		service.PATCH("/upload-img/:id", handler.uploadServiceImage)
-		service.PUT("/update/:id", handler.UpdateService)
-		serviceGet.GET("/get", handler.GetServiceById)
-		service.DELETE("/delete", handler.DeleteService)
+		service.POST("/", handler.CreateServicePost)
+		service.PATCH("/:id", handler.uploadServiceImage)
+		service.PUT("/:id", handler.UpdateService)
+		serviceGet.GET("/", handler.GetServiceById)
+		service.DELETE("/", handler.DeleteService)
 	}
 	table := api.Group("/table")
 	tableGet := router.Group("/table")
 	{
-		table.POST("/create", handler.CreateTablePost)
-		table.PATCH("/upload-img/:id", handler.uploadTableImage)
-		table.PUT("/update/:id", handler.UpdateTable)
-		tableGet.GET("/get", handler.GetTableById)
-		table.DELETE("/delete", handler.DeleteTable)
+		table.POST("/", handler.CreateTablePost)
+		table.PATCH("/:id", handler.uploadTableImage)
+		table.PUT("/:id", handler.UpdateTable)
+		tableGet.GET("/", handler.GetTableById)
+		table.DELETE("/", handler.DeleteTable)
 	}
 
 	contact := router.Group("/contact")
 	contacts := api.Group("/contacts")
 	{
-		contact.POST("/create", handler.CreateContactPost)
-		contacts.GET("/get", handler.GetAllContact)
+		contact.POST("/", handler.CreateContactPost)
+		contacts.GET("/", handler.GetAllContact)
 	}
 
 	return router
