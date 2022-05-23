@@ -24,7 +24,7 @@ import (
 // @title Norbekov API
 // @version 1.0
 // @description API Server for Norbekov App
-// @host norbekov.herokuapp.com/swagger/index.html
+// @host norbekov.herokuapp.com
 // @BasePath /
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header
