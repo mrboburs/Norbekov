@@ -187,7 +187,7 @@ definitions:
           $ref: '#/definitions/model.TableFull'
         type: array
     type: object
-host: localhost:8080
+host: http://norbekov.herokuapp.com/swagger/index.html#/Admin/create-admin_post
 info:
   contact:
     name: Mr Bobur
