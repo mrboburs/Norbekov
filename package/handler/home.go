@@ -13,6 +13,30 @@ import (
 	// "norbekov/util/logrus"
 )
 
+// @Summary Get homes
+// @Tags Home
+// @Description get  homes
+// @ID get-homes
+// @Accept  json
+// @Produce  json
+// @Success 200 {object} model.allHome
+// @Failure 400,404 {object} errorResponse
+// @Failure 500 {object} errorResponse
+// @Failure default {object} errorResponse
+// @Router /homes/get [GET]
+func (handler *Handler) GetAllHome(ctx *gin.Context) {
+	logrus := handler.logrus
+
+	contacts, err := handler.services.Home.GetAllHome(logrus)
+	if err != nil {
+		NewHandlerErrorResponse(ctx, http.StatusInternalServerError, err.Error(), logrus)
+	}
+
+	ctx.JSON(http.StatusOK, map[string]interface{}{
+		"data": contacts,
+	})
+}
+
 // @Summary Create HomePost
 // @Tags Home
 // @Description create home_post

@@ -17,6 +17,7 @@ type Home interface {
 	UpdateHome(id int, home model.HomePost, logrus *logrus.Logger) (int64, error)
 	GetHomeById(id string, logrus *logrus.Logger) (model.HomeFull, error)
 	DeleteHome(id string, logrus *logrus.Logger) error
+	GetAllHome(logrus *logrus.Logger) (home []model.HomeFull, err error)
 }
 type News interface {
 	CreateNewsPost(post model.NewsPost, logrus *logrus.Logger) (int, error)
@@ -24,6 +25,7 @@ type News interface {
 	UpdateNews(Id int, post model.NewsPost, logrus *logrus.Logger) (int64, error)
 	GetNewsById(id string, logrus *logrus.Logger) (model.NewsFull, error)
 	DeleteNews(id string, logrus *logrus.Logger) error
+	GetAllNews(logrus *logrus.Logger) (array []model.NewsFull, err error)
 	// CreateNewsPost(post model.NewsPost, logrus *logrus.Logger) (int, error)
 }
 type Services interface {
@@ -32,6 +34,7 @@ type Services interface {
 	UpdateService(Id int, post model.ServicePost, logrus *logrus.Logger) (int64, error)
 	GetServiceById(id string, logrus *logrus.Logger) (model.ServiceFull, error)
 	DeleteService(id string, logrus *logrus.Logger) error
+	GetAllService(logrus *logrus.Logger) (array []model.ServiceFull, err error)
 }
 type Table interface {
 	CreateTablePost(post model.TablePost, logrus *logrus.Logger) (int, error)
@@ -39,6 +42,7 @@ type Table interface {
 	UpdateTable(Id int, post model.TablePost, logrus *logrus.Logger) (int64, error)
 	GetTableById(id string, logrus *logrus.Logger) (model.TableFull, error)
 	DeleteTable(id string, logrus *logrus.Logger) error
+	GetAllTable(logrus *logrus.Logger) (array []model.TableFull, err error)
 }
 type Contact interface {
 	CreateContactPost(post model.Contact, logrus *logrus.Logger) (int, error)

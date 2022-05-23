@@ -20,6 +20,37 @@ func NewHomePostDB(db *sqlx.DB) *HomePostDB {
 	return &HomePostDB{db: db}
 }
 
+func (repo *HomePostDB) GetAllHome(logrus *logrus.Logger) (array []model.HomeFull, err error) {
+	rowsRs, err := repo.db.Query("SELECT id,post_title,post_img_path,post_img_url, post_body, post_date  FROM home")
+
+	if err != nil {
+		logrus.Infof("ERROR: not selecting data from sql %s", err.Error())
+		// http.Error(w, http.StatusText(500), http.StatusInternalServerError)
+		return array, err
+	}
+
+	Array := []model.HomeFull{}
+	defer rowsRs.Close()
+
+	for rowsRs.Next() {
+		snb := model.HomeFull{}
+		err = rowsRs.Scan(&snb.ID, &snb.PostTitle, &snb.PostImgPath, &snb.PostImgUrl, &snb.PostBody, &snb.PostDate)
+		if err != nil {
+			logrus.Infof("ERROR: not scanning data from sql %s", err.Error())
+			// log.Println(err)
+			// http.Error(w, http.StatusText(500), 500)
+			return array, err
+		}
+		Array = append(Array, snb)
+	}
+
+	if err = rowsRs.Err(); err != nil {
+
+		return Array, err
+	}
+	return Array, nil
+}
+
 func (repo *HomePostDB) GetHomeById(id string, logrus *logrus.Logger) (model.HomeFull, error) {
 
 	var post model.HomeFull

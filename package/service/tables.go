@@ -32,3 +32,6 @@ func (s *TableService) GetTableById(id string, logrus *logrus.Logger) (model.Tab
 func (s *TableService) DeleteTable(id string, logrus *logrus.Logger) error {
 	return s.repo.DeleteTable(id, logrus)
 }
+func (s *TableService) GetAllTable(logrus *logrus.Logger) (array []model.TableFull, err error) {
+	return s.repo.GetAllTable(logrus)
+}

@@ -17,7 +17,36 @@ type ServicePostDB struct {
 func NewServicesPostDB(db *sqlx.DB) *ServicePostDB {
 	return &ServicePostDB{db: db}
 }
+func (repo *ServicePostDB) GetAllService(logrus *logrus.Logger) (array []model.ServiceFull, err error) {
+	rowsRs, err := repo.db.Query("SELECT id,post_title,post_img_path,post_img_url, post_body, post_date  FROM services")
 
+	if err != nil {
+		logrus.Infof("ERROR: not selecting data from sql %s", err.Error())
+		// http.Error(w, http.StatusText(500), http.StatusInternalServerError)
+		return array, err
+	}
+
+	Array := []model.ServiceFull{}
+	defer rowsRs.Close()
+
+	for rowsRs.Next() {
+		snb := model.ServiceFull{}
+		err = rowsRs.Scan(&snb.ID, &snb.PostTitle, &snb.PostImgPath, &snb.PostImgUrl, &snb.PostBody, &snb.PostDate)
+		if err != nil {
+			logrus.Infof("ERROR: not scanning data from sql %s", err.Error())
+			// log.Println(err)
+			// http.Error(w, http.StatusText(500), 500)
+			return array, err
+		}
+		Array = append(Array, snb)
+	}
+
+	if err = rowsRs.Err(); err != nil {
+
+		return Array, err
+	}
+	return Array, nil
+}
 func (repo *ServicePostDB) CreateServicePost(post model.ServicePost, logrus *logrus.Logger) (int, error) {
 	var id int
 	query := fmt.Sprintf("INSERT INTO %s (post_title ,post_img_url,   post_body ) VALUES ($1, $2, $3)  RETURNING id", services)

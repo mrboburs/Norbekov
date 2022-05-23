@@ -8,6 +8,30 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @Summary Get services
+// @Tags Service
+// @Description get  service
+// @ID get-services
+// @Accept  json
+// @Produce  json
+// @Success 200 {object} model.allService
+// @Failure 400,404 {object} errorResponse
+// @Failure 500 {object} errorResponse
+// @Failure default {object} errorResponse
+// @Router /services/get [GET]
+func (handler *Handler) GetAllService(ctx *gin.Context) {
+	logrus := handler.logrus
+
+	contacts, err := handler.services.Services.GetAllService(logrus)
+	if err != nil {
+		NewHandlerErrorResponse(ctx, http.StatusInternalServerError, err.Error(), logrus)
+	}
+
+	ctx.JSON(http.StatusOK, map[string]interface{}{
+		"data": contacts,
+	})
+}
+
 // @Summary Create ServicePost
 // @Tags Service
 // @Description create service_post

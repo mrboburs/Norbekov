@@ -36,3 +36,6 @@ func (s *NewsService) GetNewsById(id string, logrus *logrus.Logger) (model.NewsF
 func (s *NewsService) DeleteNews(id string, logrus *logrus.Logger) error {
 	return s.repo.DeleteNews(id, logrus)
 }
+func (s *NewsService) GetAllNews(logrus *logrus.Logger) (array []model.NewsFull, err error) {
+	return s.repo.GetAllNews(logrus)
+}

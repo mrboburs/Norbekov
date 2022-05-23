@@ -16,3 +16,6 @@ type TableFull struct {
 	PostBody    string `json:"post_body" db:"post_body"`
 	PostDate    string `json:"post_date" db:"post_date"`
 }
+type allTable struct {
+	AllHome []TableFull
+}

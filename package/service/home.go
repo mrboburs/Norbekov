@@ -74,3 +74,6 @@ func (s *HomeService) GetHomeById(id string, logrus *logrus.Logger) (model.HomeF
 func (s *HomeService) DeleteHome(id string, logrus *logrus.Logger) error {
 	return s.repo.DeleteHome(id, logrus)
 }
+func (s *HomeService) GetAllHome(logrus *logrus.Logger) (array []model.HomeFull, err error) {
+	return s.repo.GetAllHome(logrus)
+}

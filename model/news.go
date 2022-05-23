@@ -21,3 +21,6 @@ type NewsFull struct {
 	PostBody    string `json:"post_body" db:"post_body"`
 	PostDate    string `json:"post_date" db:"post_date"`
 }
+type allNews struct {
+	AllHome []NewsFull
+}

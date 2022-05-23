@@ -12,6 +12,30 @@ import (
 	// "norbekov/util/logrus"
 )
 
+// @Summary Get newS
+// @Tags News
+// @Description get  news
+// @ID get-newsS
+// @Accept  json
+// @Produce  json
+// @Success 200 {object} model.allNews
+// @Failure 400,404 {object} errorResponse
+// @Failure 500 {object} errorResponse
+// @Failure default {object} errorResponse
+// @Router /newsS/get [GET]
+func (handler *Handler) GetAllNews(ctx *gin.Context) {
+	logrus := handler.logrus
+
+	contacts, err := handler.services.News.GetAllNews(logrus)
+	if err != nil {
+		NewHandlerErrorResponse(ctx, http.StatusInternalServerError, err.Error(), logrus)
+	}
+
+	ctx.JSON(http.StatusOK, map[string]interface{}{
+		"data": contacts,
+	})
+}
+
 // @Summary Create NewsPost
 // @Tags News
 // @Description create news_post

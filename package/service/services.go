@@ -30,3 +30,6 @@ func (s *ServicesService) GetServiceById(id string, logrus *logrus.Logger) (mode
 func (s *ServicesService) DeleteService(id string, logrus *logrus.Logger) error {
 	return s.repo.DeleteService(id, logrus)
 }
+func (s *ServicesService) GetAllService(logrus *logrus.Logger) (array []model.ServiceFull, err error) {
+	return s.repo.GetAllService(logrus)
+}

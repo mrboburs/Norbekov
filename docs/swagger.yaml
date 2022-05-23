@@ -159,6 +159,34 @@ definitions:
           $ref: '#/definitions/model.ContactFull'
         type: array
     type: object
+  model.allHome:
+    properties:
+      allHome:
+        items:
+          $ref: '#/definitions/model.HomeFull'
+        type: array
+    type: object
+  model.allNews:
+    properties:
+      allHome:
+        items:
+          $ref: '#/definitions/model.NewsFull'
+        type: array
+    type: object
+  model.allService:
+    properties:
+      allHome:
+        items:
+          $ref: '#/definitions/model.ServiceFull'
+        type: array
+    type: object
+  model.allTable:
+    properties:
+      allHome:
+        items:
+          $ref: '#/definitions/model.TableFull'
+        type: array
+    type: object
 host: localhost:8080
 info:
   contact:
@@ -1160,6 +1188,38 @@ paths:
       summary: Get home
       tags:
       - Home
+  /homes/get:
+    get:
+      consumes:
+      - application/json
+      description: get  homes
+      operationId: get-homes
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.allHome'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      summary: Get homes
+      tags:
+      - Home
   /news/get:
     get:
       consumes:
@@ -1196,6 +1256,38 @@ paths:
           schema:
             $ref: '#/definitions/handler.errorResponse'
       summary: Get news
+      tags:
+      - News
+  /newsS/get:
+    get:
+      consumes:
+      - application/json
+      description: get  news
+      operationId: get-newsS
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.allNews'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      summary: Get newS
       tags:
       - News
   /service/get:
@@ -1236,6 +1328,38 @@ paths:
       summary: Get Service
       tags:
       - Service
+  /services/get:
+    get:
+      consumes:
+      - application/json
+      description: get  service
+      operationId: get-services
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.allService'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      summary: Get services
+      tags:
+      - Service
   /table/get:
     get:
       consumes:
@@ -1272,6 +1396,38 @@ paths:
           schema:
             $ref: '#/definitions/handler.errorResponse'
       summary: Get table
+      tags:
+      - Table
+  /tables/get:
+    get:
+      consumes:
+      - application/json
+      description: get  tables
+      operationId: get-tables
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.allTable'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      summary: Get tables
       tags:
       - Table
 securityDefinitions:

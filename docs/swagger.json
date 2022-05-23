@@ -1528,6 +1528,54 @@
                 }
             }
         },
+        "/homes/get": {
+            "get": {
+                "description": "get  homes",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Home"
+                ],
+                "summary": "Get homes",
+                "operationId": "get-homes",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.allHome"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/news/get": {
             "get": {
                 "description": "get news post",
@@ -1556,6 +1604,54 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/model.NewsFull"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/newsS/get": {
+            "get": {
+                "description": "get  news",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "News"
+                ],
+                "summary": "Get newS",
+                "operationId": "get-newsS",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.allNews"
                         }
                     },
                     "400": {
@@ -1642,6 +1738,54 @@
                 }
             }
         },
+        "/services/get": {
+            "get": {
+                "description": "get  service",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Service"
+                ],
+                "summary": "Get services",
+                "operationId": "get-services",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.allService"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/table/get": {
             "get": {
                 "description": "get table post",
@@ -1670,6 +1814,54 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/model.TableFull"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/tables/get": {
+            "get": {
+                "description": "get  tables",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Table"
+                ],
+                "summary": "Get tables",
+                "operationId": "get-tables",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.allTable"
                         }
                     },
                     "400": {
@@ -1941,6 +2133,50 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/model.ContactFull"
+                    }
+                }
+            }
+        },
+        "model.allHome": {
+            "type": "object",
+            "properties": {
+                "allHome": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.HomeFull"
+                    }
+                }
+            }
+        },
+        "model.allNews": {
+            "type": "object",
+            "properties": {
+                "allHome": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.NewsFull"
+                    }
+                }
+            }
+        },
+        "model.allService": {
+            "type": "object",
+            "properties": {
+                "allHome": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.ServiceFull"
+                    }
+                }
+            }
+        },
+        "model.allTable": {
+            "type": "object",
+            "properties": {
+                "allHome": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.TableFull"
                     }
                 }
             }

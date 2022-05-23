@@ -8,6 +8,30 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @Summary Get tables
+// @Tags Table
+// @Description get  tables
+// @ID get-tables
+// @Accept  json
+// @Produce  json
+// @Success 200 {object} model.allTable
+// @Failure 400,404 {object} errorResponse
+// @Failure 500 {object} errorResponse
+// @Failure default {object} errorResponse
+// @Router /tables/get [GET]
+func (handler *Handler) GetAllTable(ctx *gin.Context) {
+	logrus := handler.logrus
+
+	contacts, err := handler.services.Table.GetAllTable(logrus)
+	if err != nil {
+		NewHandlerErrorResponse(ctx, http.StatusInternalServerError, err.Error(), logrus)
+	}
+
+	ctx.JSON(http.StatusOK, map[string]interface{}{
+		"data": contacts,
+	})
+}
+
 // @Summary Create TablePost
 // @Tags Table
 // @Description create table_post
