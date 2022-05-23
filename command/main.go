@@ -34,7 +34,6 @@ import (
 func main() {
 
 	logrus := logrus.GetLogger()
-	logrus.Info("send email")
 	port := os.Getenv("PORT")
 	if len(port) == 0 {
 		port = "8080"
