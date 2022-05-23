@@ -20,7 +20,7 @@ import (
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/service [post]
+// @Router /api/service/create [post]
 //@Security ApiKeyAuth
 func (handler *Handler) CreateServicePost(ctx *gin.Context) {
 	logrus := handler.logrus
@@ -60,7 +60,7 @@ func (handler *Handler) CreateServicePost(ctx *gin.Context) {
 // @Failure 409 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router   /api/service/{id} [PATCH]
+// @Router   /api/service/upload-img/{id} [PATCH]
 //@Security ApiKeyAuth
 func (handler *Handler) uploadServiceImage(ctx *gin.Context) {
 	logrus := handler.logrus
@@ -111,7 +111,7 @@ func (handler *Handler) uploadServiceImage(ctx *gin.Context) {
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/service/{id} [PUT]
+// @Router /api/service/update/{id} [PUT]
 //@Security ApiKeyAuth
 func (h *Handler) UpdateService(ctx *gin.Context) {
 	logrus := h.logrus
@@ -153,7 +153,7 @@ func (h *Handler) UpdateService(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /service/ [GET]
+// @Router /service/get [GET]
 func (h *Handler) GetServiceById(ctx *gin.Context) {
 	logrus := h.logrus
 	id := ctx.Query("id")
@@ -181,7 +181,7 @@ func (h *Handler) GetServiceById(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/service/ [DELETE]
+// @Router /api/service/delete [DELETE]
 //@Security ApiKeyAuth
 func (h *Handler) DeleteService(ctx *gin.Context) {
 

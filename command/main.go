@@ -10,6 +10,8 @@ import (
 	// "norbekov/server"
 	// "norbekov/util/logrus"
 
+	"os"
+
 	_ "github.com/lib/pq"
 	"github.com/mrboburs/Norbekov/configs"
 	"github.com/mrboburs/Norbekov/package/handler"
@@ -27,12 +29,16 @@ import (
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header
 // @name Authorization
+// @contact.name   Mr Bobur
 
 func main() {
 
 	logrus := logrus.GetLogger()
 	logrus.Info("send email")
-
+	port := os.Getenv("PORT")
+	if len(port) == 0 {
+		port = "8080"
+	}
 	configs, err := configs.InitConfig()
 	logrus.Infof("configs %v", configs)
 	if err != nil {
@@ -59,7 +65,7 @@ func main() {
 	handlers := handler.NewHandler(services, logrus, configs)
 
 	server := new(server.Server)
-	err = server.Run(configs.HTTPPort, handlers.InitRoutes())
+	err = server.Run(port, handlers.InitRoutes())
 
 	if err != nil {
 		logrus.Fatalf("error occurred while running http server: %s", err.Error())

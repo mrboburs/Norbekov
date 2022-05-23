@@ -10,7 +10,9 @@ const docTemplate = `{
     "info": {
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
-        "contact": {},
+        "contact": {
+            "name": "Mr Bobur"
+        },
         "version": "{{.Version}}"
     },
     "host": "{{.Host}}",
@@ -202,7 +204,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/contacts": {
+        "/api/contacts/get": {
             "get": {
                 "security": [
                     {
@@ -255,7 +257,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/home": {
+        "/api/home/create": {
             "post": {
                 "security": [
                     {
@@ -323,7 +325,9 @@ const docTemplate = `{
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/home/delete": {
             "delete": {
                 "security": [
                     {
@@ -385,7 +389,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/home/{id}": {
+        "/api/home/update/{id}": {
             "put": {
                 "security": [
                     {
@@ -460,7 +464,9 @@ const docTemplate = `{
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/home/upload-img/{id}": {
             "patch": {
                 "security": [
                     {
@@ -540,7 +546,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/news": {
+        "/api/news/create": {
             "post": {
                 "security": [
                     {
@@ -608,7 +614,9 @@ const docTemplate = `{
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/news/delete": {
             "delete": {
                 "security": [
                     {
@@ -670,7 +678,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/news/{id}": {
+        "/api/news/update/{id}": {
             "put": {
                 "security": [
                     {
@@ -745,7 +753,9 @@ const docTemplate = `{
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/news/upload-img/{id}": {
             "patch": {
                 "security": [
                     {
@@ -825,7 +835,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/service": {
+        "/api/service/create": {
             "post": {
                 "security": [
                     {
@@ -895,7 +905,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/service/": {
+        "/api/service/delete": {
             "delete": {
                 "security": [
                     {
@@ -957,7 +967,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/service/{id}": {
+        "/api/service/update/{id}": {
             "put": {
                 "security": [
                     {
@@ -1032,7 +1042,9 @@ const docTemplate = `{
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/service/upload-img/{id}": {
             "patch": {
                 "security": [
                     {
@@ -1112,7 +1124,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/table": {
+        "/api/table/create": {
             "post": {
                 "security": [
                     {
@@ -1180,7 +1192,9 @@ const docTemplate = `{
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/table/delete": {
             "delete": {
                 "security": [
                     {
@@ -1242,7 +1256,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/table/{id}": {
+        "/api/table/update/{id}": {
             "put": {
                 "security": [
                     {
@@ -1317,7 +1331,9 @@ const docTemplate = `{
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/table/upload-img/{id}": {
             "patch": {
                 "security": [
                     {
@@ -1397,7 +1413,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/contact": {
+        "/contact/create": {
             "post": {
                 "description": "create contact_post",
                 "consumes": [
@@ -1462,7 +1478,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/home": {
+        "/home/get": {
             "get": {
                 "description": "get home post",
                 "consumes": [
@@ -1519,7 +1535,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/news": {
+        "/news/get": {
             "get": {
                 "description": "get news post",
                 "consumes": [
@@ -1576,7 +1592,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/service/": {
+        "/service/get": {
             "get": {
                 "description": "get service post",
                 "consumes": [
@@ -1633,7 +1649,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/table": {
+        "/table/get": {
             "get": {
                 "description": "get table post",
                 "consumes": [

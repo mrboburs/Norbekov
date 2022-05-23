@@ -3,7 +3,9 @@
     "info": {
         "description": "API Server for Norbekov App",
         "title": "Norbekov API",
-        "contact": {},
+        "contact": {
+            "name": "Mr Bobur"
+        },
         "version": "1.0"
     },
     "host": "localhost:8080",
@@ -195,7 +197,7 @@
                 }
             }
         },
-        "/api/contacts": {
+        "/api/contacts/get": {
             "get": {
                 "security": [
                     {
@@ -248,7 +250,7 @@
                 }
             }
         },
-        "/api/home": {
+        "/api/home/create": {
             "post": {
                 "security": [
                     {
@@ -316,7 +318,9 @@
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/home/delete": {
             "delete": {
                 "security": [
                     {
@@ -378,7 +382,7 @@
                 }
             }
         },
-        "/api/home/{id}": {
+        "/api/home/update/{id}": {
             "put": {
                 "security": [
                     {
@@ -453,7 +457,9 @@
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/home/upload-img/{id}": {
             "patch": {
                 "security": [
                     {
@@ -533,7 +539,7 @@
                 }
             }
         },
-        "/api/news": {
+        "/api/news/create": {
             "post": {
                 "security": [
                     {
@@ -601,7 +607,9 @@
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/news/delete": {
             "delete": {
                 "security": [
                     {
@@ -663,7 +671,7 @@
                 }
             }
         },
-        "/api/news/{id}": {
+        "/api/news/update/{id}": {
             "put": {
                 "security": [
                     {
@@ -738,7 +746,9 @@
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/news/upload-img/{id}": {
             "patch": {
                 "security": [
                     {
@@ -818,7 +828,7 @@
                 }
             }
         },
-        "/api/service": {
+        "/api/service/create": {
             "post": {
                 "security": [
                     {
@@ -888,7 +898,7 @@
                 }
             }
         },
-        "/api/service/": {
+        "/api/service/delete": {
             "delete": {
                 "security": [
                     {
@@ -950,7 +960,7 @@
                 }
             }
         },
-        "/api/service/{id}": {
+        "/api/service/update/{id}": {
             "put": {
                 "security": [
                     {
@@ -1025,7 +1035,9 @@
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/service/upload-img/{id}": {
             "patch": {
                 "security": [
                     {
@@ -1105,7 +1117,7 @@
                 }
             }
         },
-        "/api/table": {
+        "/api/table/create": {
             "post": {
                 "security": [
                     {
@@ -1173,7 +1185,9 @@
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/table/delete": {
             "delete": {
                 "security": [
                     {
@@ -1235,7 +1249,7 @@
                 }
             }
         },
-        "/api/table/{id}": {
+        "/api/table/update/{id}": {
             "put": {
                 "security": [
                     {
@@ -1310,7 +1324,9 @@
                         }
                     }
                 }
-            },
+            }
+        },
+        "/api/table/upload-img/{id}": {
             "patch": {
                 "security": [
                     {
@@ -1390,7 +1406,7 @@
                 }
             }
         },
-        "/contact": {
+        "/contact/create": {
             "post": {
                 "description": "create contact_post",
                 "consumes": [
@@ -1455,7 +1471,7 @@
                 }
             }
         },
-        "/home": {
+        "/home/get": {
             "get": {
                 "description": "get home post",
                 "consumes": [
@@ -1512,7 +1528,7 @@
                 }
             }
         },
-        "/news": {
+        "/news/get": {
             "get": {
                 "description": "get news post",
                 "consumes": [
@@ -1569,7 +1585,7 @@
                 }
             }
         },
-        "/service/": {
+        "/service/get": {
             "get": {
                 "description": "get service post",
                 "consumes": [
@@ -1626,7 +1642,7 @@
                 }
             }
         },
-        "/table": {
+        "/table/get": {
             "get": {
                 "description": "get table post",
                 "consumes": [

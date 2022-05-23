@@ -24,7 +24,7 @@ import (
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/news [post]
+// @Router /api/news/create [post]
 //@Security ApiKeyAuth
 func (handler *Handler) CreateNewsPost(ctx *gin.Context) {
 	logrus := handler.logrus
@@ -61,7 +61,7 @@ func (handler *Handler) CreateNewsPost(ctx *gin.Context) {
 // @Failure 409 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router   /api/news/{id} [PATCH]
+// @Router   /api/news/upload-img/{id} [PATCH]
 //@Security ApiKeyAuth
 func (handler *Handler) uploadNewsImage(ctx *gin.Context) {
 	logrus := handler.logrus
@@ -112,7 +112,7 @@ func (handler *Handler) uploadNewsImage(ctx *gin.Context) {
 // @Failure 409 {object} errorResponseData
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/news/{id} [PUT]
+// @Router /api/news/update/{id} [PUT]
 //@Security ApiKeyAuth
 func (h *Handler) updateNews(ctx *gin.Context) {
 	logrus := h.logrus
@@ -154,7 +154,7 @@ func (h *Handler) updateNews(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /news [GET]
+// @Router /news/get [GET]
 func (h *Handler) GetNewsById(ctx *gin.Context) {
 	logrus := h.logrus
 	id := ctx.Query("id")
@@ -182,7 +182,7 @@ func (h *Handler) GetNewsById(ctx *gin.Context) {
 // @Failure 400,404 {object} errorResponse
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
-// @Router /api/news [DELETE]
+// @Router /api/news/delete [DELETE]
 //@Security ApiKeyAuth
 func (h *Handler) DeleteNews(ctx *gin.Context) {
 

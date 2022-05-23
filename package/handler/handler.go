@@ -2,7 +2,7 @@ package handler
 
 import (
 	// "fmt"
-	// "fmt"
+	"fmt"
 	// "norbekov/docs"
 	"github.com/mrboburs/Norbekov/docs"
 	"github.com/mrboburs/Norbekov/package/service"
@@ -19,13 +19,16 @@ import (
 type Handler struct {
 	services *service.Service
 	logrus   *logrus.Logger
+	config   *configs.Configs
 }
 
 func NewHandler(services *service.Service, logrus *logrus.Logger, config *configs.Configs) *Handler {
-	return &Handler{services: services, logrus: logrus}
+	return &Handler{services: services, logrus: logrus, config: config}
 }
 
 func (handler *Handler) InitRoutes() *gin.Engine {
+	config := handler.config
+	fmt.Println(config)
 
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()
@@ -38,47 +41,43 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	}
 	api := router.Group("/api", handler.userIdentity)
 	home := api.Group("/home")
-	homeGet := router.Group("/home")
 	{
-		home.POST("/", handler.CreateHomePost)
-		home.PATCH("/:id", handler.uploadHomeImage)
-		home.PUT("/:id", handler.updateHome)
-		homeGet.GET("/", handler.GetHomeById)
-		home.DELETE("/", handler.DeleteHome)
+		home.POST("/create", handler.CreateHomePost)
+		home.PATCH("/upload-img/:id", handler.uploadHomeImage)
+		home.PUT("/update/:id", handler.updateHome)
+		router.Group("/home").GET("/get", handler.GetHomeById)
+		home.DELETE("/delete", handler.DeleteHome)
 	}
 	news := api.Group("/news")
-	newsGet := router.Group("/news")
 	{
-		news.POST("/", handler.CreateNewsPost)
-		news.PATCH("/:id", handler.uploadNewsImage)
-		news.PUT("/:id", handler.updateNews)
-		newsGet.GET("/", handler.GetNewsById)
-		news.DELETE("/", handler.DeleteNews)
+		news.POST("/create", handler.CreateNewsPost)
+		news.PATCH("/upload-img/:id", handler.uploadNewsImage)
+		news.PUT("/update/:id", handler.updateNews)
+		router.Group("/news").GET("/get", handler.GetNewsById)
+		news.DELETE("/delete", handler.DeleteNews)
 	}
 	service := api.Group("/service")
-	serviceGet := router.Group("/service")
 	{
-		service.POST("/", handler.CreateServicePost)
-		service.PATCH("/:id", handler.uploadServiceImage)
-		service.PUT("/:id", handler.UpdateService)
-		serviceGet.GET("/", handler.GetServiceById)
-		service.DELETE("/", handler.DeleteService)
+		service.POST("/create", handler.CreateServicePost)
+		service.PATCH("/upload-img/:id", handler.uploadServiceImage)
+		service.PUT("/update/:id", handler.UpdateService)
+		router.Group("/service").GET("/get", handler.GetServiceById)
+		service.DELETE("/delete", handler.DeleteService)
 	}
 	table := api.Group("/table")
-	tableGet := router.Group("/table")
 	{
-		table.POST("/", handler.CreateTablePost)
-		table.PATCH("/:id", handler.uploadTableImage)
-		table.PUT("/:id", handler.UpdateTable)
-		tableGet.GET("/", handler.GetTableById)
-		table.DELETE("/", handler.DeleteTable)
+		table.POST("/create", handler.CreateTablePost)
+		table.PATCH("/upload-img/:id", handler.uploadTableImage)
+		table.PUT("/update/:id", handler.UpdateTable)
+		router.Group("/table").GET("/get", handler.GetTableById)
+		table.DELETE("/delete", handler.DeleteTable)
 	}
 
 	contact := router.Group("/contact")
 	contacts := api.Group("/contacts")
 	{
-		contact.POST("/", handler.CreateContactPost)
-		contacts.GET("/", handler.GetAllContact)
+		contact.POST("/create", handler.CreateContactPost)
+		contacts.GET("/get", handler.GetAllContact)
 	}
 
 	return router
