@@ -7,7 +7,7 @@ app:
 
 db:
   dbname: ybvyqagf
-  host: 	dumbo.db.elephantsql.com (dumbo-01)
+  host: 	dumbo.db.elephantsql.com 
   port: '5432'
   sslmode: disable
   username: ybvyqagf
