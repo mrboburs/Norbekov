@@ -61,7 +61,7 @@ func (handler *Handler) GetAllCourse(ctx *gin.Context) {
 // @ID create-course_post
 // @Accept  json
 // @Produce  json
-// @Param input body model.CourseFull true "table info"
+// @Param input body model.CourseFull true "course info"
 // @Success 200 {object} ResponseSuccess
 // @Failure 400,404 {object} errorResponse
 // @Failure 409 {object} errorResponseData
