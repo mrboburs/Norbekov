@@ -75,11 +75,14 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	tables := router.Group("/tables")
 	{
 		table.POST("/create", handler.CreateTablePost)
+		table.POST("/course/create", handler.CreateCoursePost)
 		table.PATCH("/upload-img/:id", handler.uploadTableImage)
 		table.PUT("/update/:id", handler.UpdateTable)
 		router.Group("/table").GET("/get", handler.GetTableById)
 		table.DELETE("/delete", handler.DeleteTable)
+		table.DELETE("/course/delete", handler.DeleteCourse)
 		tables.GET("/get", handler.GetAllTable)
+		tables.GET("/course/get", handler.GetAllCourse)
 	}
 
 	contact := router.Group("/contact")

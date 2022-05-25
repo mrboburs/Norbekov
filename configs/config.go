@@ -11,13 +11,13 @@ import (
 type Configs struct {
 	ServiceHost string
 	HTTPPort    string
-	Version     string
-	DBHost      string
-	DBPort      string
-	DBUsername  string
-	DBName      string
-	DBPassword  string
-	DBSSLMode   string
+
+	DBHost     string
+	DBPort     string
+	DBUsername string
+	DBName     string
+	DBPassword string
+	DBSSLMode  string
 }
 
 func InitConfig() (cfg *Configs, err error) {
@@ -37,7 +37,7 @@ func InitConfig() (cfg *Configs, err error) {
 
 	cfg = &Configs{
 
-		ServiceHost: viper.GetString("app.server"),
+		ServiceHost: viper.GetString("app.host"),
 		HTTPPort:    viper.GetString("app.port"),
 
 		DBHost:     viper.GetString("db.host"),

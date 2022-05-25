@@ -8,7 +8,7 @@
         },
         "version": "1.0"
     },
-    "host": "norbekov.herokuapp.com",
+    "host": "localhost:8080",
     "basePath": "/",
     "paths": {
         "/admin/create": {
@@ -197,14 +197,9 @@
                 }
             }
         },
-        "/api/contacts/get": {
-            "get": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "description": "get  contacts",
+        "/api/contact/create": {
+            "post": {
+                "description": "create contact_post",
                 "consumes": [
                     "application/json"
                 ],
@@ -214,13 +209,24 @@
                 "tags": [
                     "Contact"
                 ],
-                "summary": "Get contacts",
-                "operationId": "get-contacts",
+                "summary": "Create Contact",
+                "operationId": "create-contact_post",
+                "parameters": [
+                    {
+                        "description": "home info",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Contact"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/model.allContacts"
+                            "$ref": "#/definitions/handler.ResponseSuccess"
                         }
                     },
                     "400": {
@@ -233,6 +239,12 @@
                         "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponseData"
                         }
                     },
                     "500": {
@@ -1117,6 +1129,138 @@
                 }
             }
         },
+        "/api/table/course/create": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "create course_post",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Table"
+                ],
+                "summary": "Create CoursePost",
+                "operationId": "create-course_post",
+                "parameters": [
+                    {
+                        "description": "table info",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.CourseFull"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ResponseSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponseData"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/table/course/delete": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "delete table",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Table"
+                ],
+                "summary": "Get Delete Coures",
+                "operationId": "delete-course",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.TableFull"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/api/table/create": {
             "post": {
                 "security": [
@@ -1282,7 +1426,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/model.NewsPost"
+                            "$ref": "#/definitions/model.TablePost"
                         }
                     }
                 ],
@@ -1406,9 +1550,14 @@
                 }
             }
         },
-        "/contact/create": {
-            "post": {
-                "description": "create contact_post",
+        "/contacts/get": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "get  contacts",
                 "consumes": [
                     "application/json"
                 ],
@@ -1418,24 +1567,13 @@
                 "tags": [
                     "Contact"
                 ],
-                "summary": "Create Contact",
-                "operationId": "create-contact_post",
-                "parameters": [
-                    {
-                        "description": "home info",
-                        "name": "input",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/model.Contact"
-                        }
-                    }
-                ],
+                "summary": "Get contacts",
+                "operationId": "get-contacts",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.ResponseSuccess"
+                            "$ref": "#/definitions/model.allContacts"
                         }
                     },
                     "400": {
@@ -1448,12 +1586,6 @@
                         "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/handler.errorResponse"
-                        }
-                    },
-                    "409": {
-                        "description": "Conflict",
-                        "schema": {
-                            "$ref": "#/definitions/handler.errorResponseData"
                         }
                     },
                     "500": {
@@ -1843,6 +1975,48 @@
                 }
             }
         },
+        "/tables/course/get": {
+            "get": {
+                "description": "get  courses",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Table"
+                ],
+                "summary": "Get courses",
+                "operationId": "get-course",
+                "responses": {
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/tables/get": {
             "get": {
                 "description": "get  tables",
@@ -1978,6 +2152,32 @@
                 }
             }
         },
+        "model.CourseFull": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string"
+                },
+                "duration": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "post_body": {
+                    "type": "string"
+                },
+                "post_title": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "string"
+                },
+                "term": {
+                    "type": "string"
+                }
+            }
+        },
         "model.HomeFull": {
             "type": "object",
             "properties": {
@@ -2072,6 +2272,9 @@
                 },
                 "post_title": {
                     "type": "string"
+                },
+                "price": {
+                    "type": "string"
                 }
             }
         },
@@ -2086,12 +2289,18 @@
                 },
                 "post_title": {
                     "type": "string"
+                },
+                "price": {
+                    "type": "string"
                 }
             }
         },
         "model.TableFull": {
             "type": "object",
             "properties": {
+                "duration": {
+                    "type": "string"
+                },
                 "id": {
                     "type": "integer"
                 },
@@ -2109,12 +2318,18 @@
                 },
                 "post_title": {
                     "type": "string"
+                },
+                "price": {
+                    "type": "string"
                 }
             }
         },
         "model.TablePost": {
             "type": "object",
             "properties": {
+                "duration": {
+                    "type": "string"
+                },
                 "post_body": {
                     "type": "string"
                 },
@@ -2122,6 +2337,9 @@
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "price": {
                     "type": "string"
                 }
             }

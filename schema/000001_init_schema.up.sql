@@ -50,6 +50,7 @@ post_img_path VARCHAR(255) NOT NULL DEFAULT '' ,
 post_img_url VARCHAR(255) NULL,
 post_body TEXT  NULL,
 post_date TIMESTAMP  NULL DEFAULT (NOW()),
+price  VARCHAR(255) NULL ,
 created_at TIMESTAMP  DEFAULT (NOW()),
 updated_at TIMESTAMP NULL,
 deleted_at TIMESTAMP NULL
@@ -62,6 +63,22 @@ post_img_path VARCHAR(255) NOT NULL DEFAULT '' ,
 post_img_url VARCHAR(255) NULL,
 post_body TEXT  NULL,
 post_date TIMESTAMP  NULL DEFAULT (NOW()),
+price  VARCHAR(255) NULL ,
+duration  VARCHAR(255) NULL ,
+created_at TIMESTAMP  DEFAULT (NOW()),
+updated_at TIMESTAMP NULL,
+deleted_at TIMESTAMP NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS course (
+id SERIAL NOT NULL  UNIQUE,
+title VARCHAR(255)  NULL,
+price  VARCHAR(255) NULL ,
+body VARCHAR(255) NULL,
+duration  VARCHAR(255) NULL ,
+term  VARCHAR(255) NULL,
+format VARCHAR(255) NULL,
 created_at TIMESTAMP  DEFAULT (NOW()),
 updated_at TIMESTAMP NULL,
 deleted_at TIMESTAMP NULL

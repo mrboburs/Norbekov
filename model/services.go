@@ -6,6 +6,7 @@ type ServicePost struct {
 
 	PostImgUrl string `json:"post_img_url"`
 	PostBody   string `json:"post_body"`
+	Price      string `json:"price" `
 }
 
 type ServiceFull struct {
@@ -14,6 +15,7 @@ type ServiceFull struct {
 	PostImgPath string `json:"post_img_path" db:"post_img_path"`
 	PostImgUrl  string `json:"post_img_url" db:"post_img_url"`
 	PostBody    string `json:"post_body" db:"post_body"`
+	Price       string `json:"price" db:"price"`
 	PostDate    string `json:"post_date" db:"post_date"`
 }
 type allService struct {

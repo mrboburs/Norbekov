@@ -39,6 +39,10 @@ type Table interface {
 	GetAllTable(logrus *logrus.Logger) (array []model.TableFull, err error)
 	UpdateTableImage(ID int, filePath string, logrus *logrus.Logger) (int64, error)
 	UpdateTable(Id int, post model.TablePost, logrus *logrus.Logger) (int64, error)
+
+	GetAllCourse(logrus *logrus.Logger) (array []model.CourseFull1, err error)
+	CreateCoursePost(post model.CourseFull, logrus *logrus.Logger) (int, error)
+	DeleteCourse(id string, logrus *logrus.Logger) error
 	CreateTablePost(post model.TablePost, logrus *logrus.Logger) (int, error)
 	DeleteTable(id string, logrus *logrus.Logger) error
 	GetTableById(id string, logrus *logrus.Logger) (model.TableFull, error)

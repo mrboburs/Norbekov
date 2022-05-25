@@ -204,14 +204,9 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/contacts/get": {
-            "get": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "description": "get  contacts",
+        "/api/contact/create": {
+            "post": {
+                "description": "create contact_post",
                 "consumes": [
                     "application/json"
                 ],
@@ -221,13 +216,24 @@ const docTemplate = `{
                 "tags": [
                     "Contact"
                 ],
-                "summary": "Get contacts",
-                "operationId": "get-contacts",
+                "summary": "Create Contact",
+                "operationId": "create-contact_post",
+                "parameters": [
+                    {
+                        "description": "home info",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Contact"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/model.allContacts"
+                            "$ref": "#/definitions/handler.ResponseSuccess"
                         }
                     },
                     "400": {
@@ -240,6 +246,12 @@ const docTemplate = `{
                         "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponseData"
                         }
                     },
                     "500": {
@@ -1124,6 +1136,138 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/table/course/create": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "create course_post",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Table"
+                ],
+                "summary": "Create CoursePost",
+                "operationId": "create-course_post",
+                "parameters": [
+                    {
+                        "description": "table info",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.CourseFull"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/handler.ResponseSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponseData"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/table/course/delete": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "delete table",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Table"
+                ],
+                "summary": "Get Delete Coures",
+                "operationId": "delete-course",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.TableFull"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/api/table/create": {
             "post": {
                 "security": [
@@ -1289,7 +1433,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/model.NewsPost"
+                            "$ref": "#/definitions/model.TablePost"
                         }
                     }
                 ],
@@ -1413,9 +1557,14 @@ const docTemplate = `{
                 }
             }
         },
-        "/contact/create": {
-            "post": {
-                "description": "create contact_post",
+        "/contacts/get": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "get  contacts",
                 "consumes": [
                     "application/json"
                 ],
@@ -1425,24 +1574,13 @@ const docTemplate = `{
                 "tags": [
                     "Contact"
                 ],
-                "summary": "Create Contact",
-                "operationId": "create-contact_post",
-                "parameters": [
-                    {
-                        "description": "home info",
-                        "name": "input",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/model.Contact"
-                        }
-                    }
-                ],
+                "summary": "Get contacts",
+                "operationId": "get-contacts",
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.ResponseSuccess"
+                            "$ref": "#/definitions/model.allContacts"
                         }
                     },
                     "400": {
@@ -1455,12 +1593,6 @@ const docTemplate = `{
                         "description": "Not Found",
                         "schema": {
                             "$ref": "#/definitions/handler.errorResponse"
-                        }
-                    },
-                    "409": {
-                        "description": "Conflict",
-                        "schema": {
-                            "$ref": "#/definitions/handler.errorResponseData"
                         }
                     },
                     "500": {
@@ -1850,6 +1982,48 @@ const docTemplate = `{
                 }
             }
         },
+        "/tables/course/get": {
+            "get": {
+                "description": "get  courses",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Table"
+                ],
+                "summary": "Get courses",
+                "operationId": "get-course",
+                "responses": {
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/handler.errorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/tables/get": {
             "get": {
                 "description": "get  tables",
@@ -1985,6 +2159,32 @@ const docTemplate = `{
                 }
             }
         },
+        "model.CourseFull": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string"
+                },
+                "duration": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "post_body": {
+                    "type": "string"
+                },
+                "post_title": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "string"
+                },
+                "term": {
+                    "type": "string"
+                }
+            }
+        },
         "model.HomeFull": {
             "type": "object",
             "properties": {
@@ -2079,6 +2279,9 @@ const docTemplate = `{
                 },
                 "post_title": {
                     "type": "string"
+                },
+                "price": {
+                    "type": "string"
                 }
             }
         },
@@ -2093,12 +2296,18 @@ const docTemplate = `{
                 },
                 "post_title": {
                     "type": "string"
+                },
+                "price": {
+                    "type": "string"
                 }
             }
         },
         "model.TableFull": {
             "type": "object",
             "properties": {
+                "duration": {
+                    "type": "string"
+                },
                 "id": {
                     "type": "integer"
                 },
@@ -2116,12 +2325,18 @@ const docTemplate = `{
                 },
                 "post_title": {
                     "type": "string"
+                },
+                "price": {
+                    "type": "string"
                 }
             }
         },
         "model.TablePost": {
             "type": "object",
             "properties": {
+                "duration": {
+                    "type": "string"
+                },
                 "post_body": {
                     "type": "string"
                 },
@@ -2129,6 +2344,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "price": {
                     "type": "string"
                 }
             }
@@ -2201,7 +2419,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "norbekov.herokuapp.com",
+	Host:             "localhost:8080",
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "Norbekov API",

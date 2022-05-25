@@ -43,6 +43,9 @@ type Table interface {
 	GetTableById(id string, logrus *logrus.Logger) (model.TableFull, error)
 	DeleteTable(id string, logrus *logrus.Logger) error
 	GetAllTable(logrus *logrus.Logger) (array []model.TableFull, err error)
+	GetAllCourse(logrus *logrus.Logger) (array []model.CourseFull1, err error)
+	CreateCoursePost(post model.CourseFull, logrus *logrus.Logger) (int, error)
+	DeleteCourse(id string, logrus *logrus.Logger) error
 }
 type Contact interface {
 	CreateContactPost(post model.Contact, logrus *logrus.Logger) (int, error)
