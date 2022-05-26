@@ -8,7 +8,7 @@
         },
         "version": "1.0"
     },
-    "host": "localhost:8080",
+    "host": "norbekov.herokuapp.com",
     "basePath": "/",
     "paths": {
         "/admin/create": {
@@ -1150,7 +1150,7 @@
                 "operationId": "create-course_post",
                 "parameters": [
                     {
-                        "description": "table info",
+                        "description": "course info",
                         "name": "input",
                         "in": "body",
                         "required": true,

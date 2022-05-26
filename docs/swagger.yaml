@@ -216,7 +216,7 @@ definitions:
           $ref: '#/definitions/model.TableFull'
         type: array
     type: object
-host: localhost:8080
+host: norbekov.herokuapp.com
 info:
   contact:
     name: Mr Bobur
@@ -963,7 +963,7 @@ paths:
       description: create course_post
       operationId: create-course_post
       parameters:
-      - description: table info
+      - description: course info
         in: body
         name: input
         required: true
