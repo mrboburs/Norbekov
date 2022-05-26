@@ -64,7 +64,7 @@ func main() {
 	handlers := handler.NewHandler(services, logrus, configs)
 
 	server := new(server.Server)
-	err = server.Run(":"+port, handlers.InitRoutes())
+	err = server.Run(port, handlers.InitRoutes())
 
 	if err != nil {
 		logrus.Fatalf("error occurred while running http server: %s", err.Error())
