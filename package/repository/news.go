@@ -23,7 +23,7 @@ func NewNewsPostDB(db *sqlx.DB) *NewsPostDB {
 	return &NewsPostDB{db: db}
 }
 func (repo *NewsPostDB) GetAllNews(logrus *logrus.Logger) (array []model.NewsFull, err error) {
-	rowsRs, err := repo.db.Query("SELECT id,post_title,post_img_path,post_img_url, post_body, post_date  FROM news")
+	rowsRs, err := repo.db.Query("SELECT id,post_title,post_title_ru,post_img_path,post_img_url, post_body,post_body_ru, post_date   FROM news")
 
 	if err != nil {
 		logrus.Infof("ERROR: not selecting data from sql %s", err.Error())
@@ -36,7 +36,7 @@ func (repo *NewsPostDB) GetAllNews(logrus *logrus.Logger) (array []model.NewsFul
 
 	for rowsRs.Next() {
 		snb := model.NewsFull{}
-		err = rowsRs.Scan(&snb.ID, &snb.PostTitle, &snb.PostImgPath, &snb.PostImgUrl, &snb.PostBody, &snb.PostDate)
+		err = rowsRs.Scan(&snb.ID, &snb.PostTitle, &snb.PostTitleRu, &snb.PostImgPath, &snb.PostImgUrl, &snb.PostBody, &snb.PostBodyRu, &snb.PostDate)
 		if err != nil {
 			logrus.Infof("ERROR: not scanning data from sql %s", err.Error())
 			// log.Println(err)
@@ -90,8 +90,8 @@ func (repo *NewsPostDB) UpdateNewsImage(ID int, filePath string, logrus *logrus.
 
 func (repo *NewsPostDB) UpdateNews(Id int, post model.NewsPost, logrus *logrus.Logger) (int64, error) {
 	tm := time.Now()
-	query := fmt.Sprintf("	UPDATE %s SET post_title =$1, post_img_url  = $2, post_body = $3,  updated_at=$4 WHERE id = $5 RETURNING id", news)
-	rows, err := repo.db.Exec(query, post.PostTitle, post.PostImgUrl, post.PostBody, tm, Id)
+	query := fmt.Sprintf("	UPDATE %s SET post_title =$1, post_img_url  = $2, post_body = $3,  updated_at=$4 ,post_title_ru=$5,post_body_ru=$6  WHERE id = $7 RETURNING id", news)
+	rows, err := repo.db.Exec(query, post.PostTitle, post.PostImgUrl, post.PostBody, tm, post.PostTitleRu, post.PostBodyRu, Id)
 
 	if err != nil {
 		logrus.Errorf("ERROR: Update home : %v", err)
@@ -108,7 +108,7 @@ func (repo *NewsPostDB) UpdateNews(Id int, post model.NewsPost, logrus *logrus.L
 func (repo *NewsPostDB) GetNewsById(id string, logrus *logrus.Logger) (model.NewsFull, error) {
 
 	var post model.NewsFull
-	query := fmt.Sprintf("SELECT  id, post_title, post_img_path,post_img_url, post_body, post_date  FROM %s WHERE id=$1 ", news)
+	query := fmt.Sprintf("SELECT  id, post_title,post_title_ru, post_img_path,post_img_url, post_body,post_body_ru, post_date  FROM %s WHERE id=$1 ", news)
 	err := repo.db.Get(&post, query, id)
 	if err != nil {
 		logrus.Errorf("ERROR: don't get users %s", err)

@@ -6,16 +6,19 @@ import (
 )
 
 type NewsPost struct {
-	ID        int    `json:"-"`
-	PostTitle string `json:"post_title"`
-
-	PostImgUrl string `json:"post_img_url"`
-	PostBody   string `json:"post_body"`
+	ID          int    `json:"-"`
+	PostTitle   string `json:"post_title"`
+	PostTitleRu string `json:"post_title_ru"`
+	PostImgUrl  string `json:"post_img_url"`
+	PostBody    string `json:"post_body"`
+	PostBodyRu  string `json:"post_body_ru"`
 }
 
 type NewsFull struct {
 	ID          int    `json:"id" db:"id"`
 	PostTitle   string `json:"post_title" db:"post_title"`
+	PostBodyRu  string `json:"post_body_ru" db:"post_body_ru"`
+	PostTitleRu string `json:"post_title_ru" db:"post_title_ru"`
 	PostImgPath string `json:"post_img_path" db:"post_img_path"`
 	PostImgUrl  string `json:"post_img_url" db:"post_img_url"`
 	PostBody    string `json:"post_body" db:"post_body"`

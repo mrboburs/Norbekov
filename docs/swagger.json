@@ -2155,6 +2155,9 @@
         "model.CourseFull": {
             "type": "object",
             "properties": {
+                "body_ru": {
+                    "type": "string"
+                },
                 "date": {
                     "type": "string"
                 },
@@ -2175,6 +2178,9 @@
                 },
                 "term": {
                     "type": "string"
+                },
+                "title_ru": {
+                    "type": "string"
                 }
             }
         },
@@ -2185,6 +2191,9 @@
                     "type": "integer"
                 },
                 "post_body": {
+                    "type": "string"
+                },
+                "post_body_ru": {
                     "type": "string"
                 },
                 "post_date": {
@@ -2198,6 +2207,9 @@
                 },
                 "post_title": {
                     "type": "string"
+                },
+                "post_title_ru": {
+                    "type": "string"
                 }
             }
         },
@@ -2207,10 +2219,16 @@
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_img_url": {
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 }
             }
@@ -2224,6 +2242,9 @@
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_date": {
                     "type": "string"
                 },
@@ -2235,6 +2256,9 @@
                 },
                 "post_title": {
                     "type": "string"
+                },
+                "post_title_ru": {
+                    "type": "string"
                 }
             }
         },
@@ -2244,10 +2268,16 @@
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_img_url": {
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 }
             }
@@ -2261,6 +2291,9 @@
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_date": {
                     "type": "string"
                 },
@@ -2271,6 +2304,9 @@
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 },
                 "price": {
@@ -2284,10 +2320,16 @@
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_img_url": {
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 },
                 "price": {
@@ -2307,6 +2349,9 @@
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_date": {
                     "type": "string"
                 },
@@ -2317,6 +2362,9 @@
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 },
                 "price": {
@@ -2333,10 +2381,16 @@
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_img_url": {
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 },
                 "price": {

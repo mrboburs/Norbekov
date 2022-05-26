@@ -21,7 +21,7 @@ migrate-up:
 	migrate -path ./schema -database 'postgresql://ybvyqagf:pYnwpFYKWTfe0kLSGm2Mhi-a71u94xzo@dumbo.db.elephantsql.com:5432/ybvyqagf?sslmode=disable' up
 
 migrate-down:
-	migrate -path ./schema -database 'postgresql://postgres:1996@localhost:5434/mediumuz?sslmode=disable' down
+	migrate -path ./schema -database 'postgresql://ybvyqagf:pYnwpFYKWTfe0kLSGm2Mhi-a71u94xzo@dumbo.db.elephantsql.com:5432/ybvyqagf?sslmode=disable' down
 
 
 

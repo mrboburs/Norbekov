@@ -2,13 +2,21 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
+ 
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
+ 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
 # This is free software: you are free to change and redistribute it.
+ 
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Thu May 26 07:58:18 2022
+ 
+# Make data base, printed on Thu May 26 20:12:16 2022
+ 
 
 # Variables
 
@@ -32,8 +40,6 @@ XDG_SESSION_TYPE = x11
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# environment
-IM_CONFIG_PHASE = 1
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -49,9 +55,11 @@ SHELL = /bin/sh
 # environment
 SNAP_DATA = /var/snap/code/97
 # environment
+VTE_VERSION = 6003
+# environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:42863
+JOURNAL_STREAM = 8:42764
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -63,7 +71,7 @@ MAKEFILE_LIST :=  Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+IM_CONFIG_PHASE = 1
 # environment
 USERNAME = bobur
 # environment
@@ -73,11 +81,9 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=50703be46eb97db4f1d47ff7628eeca3
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# environment
-_ = /snap/code/97/usr/share/code/code
 # environment
 MANAGERPID = 1970
 # environment
@@ -85,7 +91,7 @@ LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = uz_UZ.UTF-8
 # environment
-VSCODE_CWD = /home/bobur
+VSCODE_CWD = /home/bobur/p/Norbekov
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # environment
@@ -93,7 +99,7 @@ GSETTINGS_SCHEMA_DIR = /snap/code/97/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/go/bin:/home/bobur/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/go/bin:/home/bobur/go/bin:/home/bobur/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/go/bin:/home/bobur/go/bin
+PATH = /usr/local/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/go/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
@@ -117,19 +123,17 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 2ec4b9fe2fed452681f7abfe57db2098
+INVOCATION_ID = b7a8012318a64ba68e0ab6a3ff06a421
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
-LS_COLORS = 
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
-# environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2490
 # automatic
 %F = $(notdir $%)
 # environment
@@ -182,6 +186,8 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 LC_TIME = uz_UZ.UTF-8
 # environment
 SNAP_REAL_HOME = /home/bobur
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -191,11 +197,11 @@ QT_IM_MODULE = ibus
 # environment
 SNAP_USER_DATA = /home/bobur/snap/code/97
 # environment
-SHLVL = 0
+SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-79d60996-2d17-4d45-b2b1-307ce77dff1a.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-9759df7f-61b9-469e-8991-eda286609389.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -216,6 +222,8 @@ GOROOT = /usr/local/go
 LC_TELEPHONE = uz_UZ.UTF-8
 # default
 MAKE_COMMAND := make
+# environment
+OLDPWD = /home/bobur/p
 # default
 .VARIABLES := 
 # automatic
@@ -237,6 +245,8 @@ GDK_BACKEND = x11
 # environment
 LC_PAPER = uz_UZ.UTF-8
 # environment
+NO_AT_BRIDGE = 1
+# environment
 LC_IDENTIFICATION = uz_UZ.UTF-8
 # environment
 QT_ACCESSIBILITY = 1
@@ -255,9 +265,15 @@ SNAP_NAME = code
 # environment
 LC_ALL = C
 # environment
+DBUS_STARTER_BUS_TYPE = session
+# environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2e0681b2_d255_4632_8292_0c0a95dc1290
 # automatic
 ^F = $(notdir $^)
+# environment
+GNOME_TERMINAL_SERVICE = :1.139
 # default
 SUFFIXES := 
 # environment
@@ -277,10 +293,14 @@ LC_ADDRESS = uz_UZ.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2534
  
+TERM = xterm-256color
+# environment
+VSCODE_PID = 17162
+# environment
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=50703be46eb97db4f1d47ff7628eeca3
 # variable set hash-table stats:
-# Load=133/1024=13%, Rehash=0, Collisions=24/158=15%
+# Load=139/1024=14%, Rehash=0, Collisions=21/164=13%
 
 # Pattern-specific Variable Values
 
@@ -310,7 +330,7 @@ migrate-down:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 24):
-	migrate -path ./schema -database 'postgresql://postgres:1996@localhost:5434/mediumuz?sslmode=disable' down
+	migrate -path ./schema -database 'postgresql://ybvyqagf:pYnwpFYKWTfe0kLSGm2Mhi-a71u94xzo@dumbo.db.elephantsql.com:5432/ybvyqagf?sslmode=disable' down
 
 # Not a target:
 all:
@@ -322,7 +342,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-23 23:31:44.895571379
+#  Last modified 2022-05-26 10:29:42.494559548
 #  File has been updated.
 #  Successfully updated.
 
@@ -388,6 +408,6 @@ swag:
 # strcache performance: lookups = 43 / hit rate = 27%
 # hash-table stats:
 # Load=31/8192=0%, Rehash=0, Collisions=1/43=2%
-# Finished Make data base on Thu May 26 07:58:18 2022
+# Finished Make data base on Thu May 26 20:12:16 2022
 
  

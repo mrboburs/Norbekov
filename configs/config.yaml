@@ -1,14 +1,14 @@
 app:
-  server: localhost
-  port: '8080'
+   server: localhost
+   port: '8080'
   
 
 db:
-  dbname: ybvyqagf
-  host: 	dumbo.db.elephantsql.com 
-  port: '5432'
-  sslmode: disable
-  username: ybvyqagf
+   dbname: ybvyqagf
+   host: 	dumbo.db.elephantsql.com 
+   port: '5432'
+   sslmode: disable
+   username: ybvyqagf
 
 
 

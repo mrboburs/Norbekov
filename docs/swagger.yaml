@@ -58,6 +58,8 @@ definitions:
     type: object
   model.CourseFull:
     properties:
+      body_ru:
+        type: string
       date:
         type: string
       duration:
@@ -72,12 +74,16 @@ definitions:
         type: string
       term:
         type: string
+      title_ru:
+        type: string
     type: object
   model.HomeFull:
     properties:
       id:
         type: integer
       post_body:
+        type: string
+      post_body_ru:
         type: string
       post_date:
         type: string
@@ -87,14 +93,20 @@ definitions:
         type: string
       post_title:
         type: string
+      post_title_ru:
+        type: string
     type: object
   model.HomePost:
     properties:
       post_body:
         type: string
+      post_body_ru:
+        type: string
       post_img_url:
         type: string
       post_title:
+        type: string
+      post_title_ru:
         type: string
     type: object
   model.NewsFull:
@@ -103,6 +115,8 @@ definitions:
         type: integer
       post_body:
         type: string
+      post_body_ru:
+        type: string
       post_date:
         type: string
       post_img_path:
@@ -111,14 +125,20 @@ definitions:
         type: string
       post_title:
         type: string
+      post_title_ru:
+        type: string
     type: object
   model.NewsPost:
     properties:
       post_body:
         type: string
+      post_body_ru:
+        type: string
       post_img_url:
         type: string
       post_title:
+        type: string
+      post_title_ru:
         type: string
     type: object
   model.ServiceFull:
@@ -127,6 +147,8 @@ definitions:
         type: integer
       post_body:
         type: string
+      post_body_ru:
+        type: string
       post_date:
         type: string
       post_img_path:
@@ -135,6 +157,8 @@ definitions:
         type: string
       post_title:
         type: string
+      post_title_ru:
+        type: string
       price:
         type: string
     type: object
@@ -142,9 +166,13 @@ definitions:
     properties:
       post_body:
         type: string
+      post_body_ru:
+        type: string
       post_img_url:
         type: string
       post_title:
+        type: string
+      post_title_ru:
         type: string
       price:
         type: string
@@ -157,6 +185,8 @@ definitions:
         type: integer
       post_body:
         type: string
+      post_body_ru:
+        type: string
       post_date:
         type: string
       post_img_path:
@@ -164,6 +194,8 @@ definitions:
       post_img_url:
         type: string
       post_title:
+        type: string
+      post_title_ru:
         type: string
       price:
         type: string
@@ -174,9 +206,13 @@ definitions:
         type: string
       post_body:
         type: string
+      post_body_ru:
+        type: string
       post_img_url:
         type: string
       post_title:
+        type: string
+      post_title_ru:
         type: string
       price:
         type: string

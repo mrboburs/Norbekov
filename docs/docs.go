@@ -2162,6 +2162,9 @@ const docTemplate = `{
         "model.CourseFull": {
             "type": "object",
             "properties": {
+                "body_ru": {
+                    "type": "string"
+                },
                 "date": {
                     "type": "string"
                 },
@@ -2182,6 +2185,9 @@ const docTemplate = `{
                 },
                 "term": {
                     "type": "string"
+                },
+                "title_ru": {
+                    "type": "string"
                 }
             }
         },
@@ -2192,6 +2198,9 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "post_body": {
+                    "type": "string"
+                },
+                "post_body_ru": {
                     "type": "string"
                 },
                 "post_date": {
@@ -2205,6 +2214,9 @@ const docTemplate = `{
                 },
                 "post_title": {
                     "type": "string"
+                },
+                "post_title_ru": {
+                    "type": "string"
                 }
             }
         },
@@ -2214,10 +2226,16 @@ const docTemplate = `{
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_img_url": {
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 }
             }
@@ -2231,6 +2249,9 @@ const docTemplate = `{
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_date": {
                     "type": "string"
                 },
@@ -2242,6 +2263,9 @@ const docTemplate = `{
                 },
                 "post_title": {
                     "type": "string"
+                },
+                "post_title_ru": {
+                    "type": "string"
                 }
             }
         },
@@ -2251,10 +2275,16 @@ const docTemplate = `{
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_img_url": {
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 }
             }
@@ -2268,6 +2298,9 @@ const docTemplate = `{
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_date": {
                     "type": "string"
                 },
@@ -2278,6 +2311,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 },
                 "price": {
@@ -2291,10 +2327,16 @@ const docTemplate = `{
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_img_url": {
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 },
                 "price": {
@@ -2314,6 +2356,9 @@ const docTemplate = `{
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_date": {
                     "type": "string"
                 },
@@ -2324,6 +2369,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 },
                 "price": {
@@ -2340,10 +2388,16 @@ const docTemplate = `{
                 "post_body": {
                     "type": "string"
                 },
+                "post_body_ru": {
+                    "type": "string"
+                },
                 "post_img_url": {
                     "type": "string"
                 },
                 "post_title": {
+                    "type": "string"
+                },
+                "post_title_ru": {
                     "type": "string"
                 },
                 "price": {

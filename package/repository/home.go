@@ -21,7 +21,7 @@ func NewHomePostDB(db *sqlx.DB) *HomePostDB {
 }
 
 func (repo *HomePostDB) GetAllHome(logrus *logrus.Logger) (array []model.HomeFull, err error) {
-	rowsRs, err := repo.db.Query("SELECT id,post_title,post_img_path,post_img_url, post_body, post_date  FROM home")
+	rowsRs, err := repo.db.Query("SELECT id,post_title,post_title_ru,post_img_path,post_img_url, post_body,post_body_ru, post_date  FROM home")
 
 	if err != nil {
 		logrus.Infof("ERROR: not selecting data from sql %s", err.Error())
@@ -34,7 +34,7 @@ func (repo *HomePostDB) GetAllHome(logrus *logrus.Logger) (array []model.HomeFul
 
 	for rowsRs.Next() {
 		snb := model.HomeFull{}
-		err = rowsRs.Scan(&snb.ID, &snb.PostTitle, &snb.PostImgPath, &snb.PostImgUrl, &snb.PostBody, &snb.PostDate)
+		err = rowsRs.Scan(&snb.ID, &snb.PostTitle, &snb.PostTitleRu, &snb.PostImgPath, &snb.PostImgUrl, &snb.PostBody, &snb.PostBodyRu, &snb.PostDate)
 		if err != nil {
 			logrus.Infof("ERROR: not scanning data from sql %s", err.Error())
 			// log.Println(err)
@@ -54,7 +54,7 @@ func (repo *HomePostDB) GetAllHome(logrus *logrus.Logger) (array []model.HomeFul
 func (repo *HomePostDB) GetHomeById(id string, logrus *logrus.Logger) (model.HomeFull, error) {
 
 	var post model.HomeFull
-	query := fmt.Sprintf("SELECT  id, post_title, post_img_path,post_img_url, post_body, post_date  FROM %s WHERE id=$1 ", home)
+	query := fmt.Sprintf("SELECT  id, post_title,post_title_ru, post_img_path,post_img_url, post_body,post_body_ru, post_date  FROM %s WHERE id=$1 ", home)
 	err := repo.db.Get(&post, query, id)
 	if err != nil {
 		logrus.Errorf("ERROR: don't get users %s", err)
@@ -67,9 +67,9 @@ func (repo *HomePostDB) GetHomeById(id string, logrus *logrus.Logger) (model.Hom
 
 func (repo *HomePostDB) CreateHomePost(post model.HomePost, logrus *logrus.Logger) (int, error) {
 	var id int
-	query := fmt.Sprintf("INSERT INTO %s (post_title ,post_img_url,   post_body ) VALUES ($1, $2, $3)  RETURNING id", home)
+	query := fmt.Sprintf("INSERT INTO %s (post_title,post_title_ru,post_body_ru ,post_img_url,   post_body ) VALUES ($1, $2, $3,$4,$5)  RETURNING id", home)
 
-	row := repo.db.QueryRow(query, post.PostTitle, post.PostImgUrl, post.PostBody)
+	row := repo.db.QueryRow(query, post.PostTitle, post.PostTitleRu, post.PostBodyRu, post.PostImgUrl, post.PostBody)
 
 	if err := row.Scan(&id); err != nil {
 		logrus.Infof("ERROR:PSQL Insert error %s", err.Error())
@@ -103,8 +103,8 @@ func (repo *HomePostDB) UpdateHomeImage(id int, filePath string, logrus *logrus.
 
 func (repo *HomePostDB) UpdateHome(Id int, post model.HomePost, logrus *logrus.Logger) (int64, error) {
 	tm := time.Now()
-	query := fmt.Sprintf("	UPDATE %s SET post_title =$1, post_img_url  = $2, post_body = $3,  updated_at=$4 WHERE id = $5 RETURNING id", home)
-	rows, err := repo.db.Exec(query, post.PostTitle, post.PostImgUrl, post.PostBody, tm, Id)
+	query := fmt.Sprintf("	UPDATE %s SET post_title =$1, post_img_url  = $2, post_body = $3,  updated_at=$4,post_title_ru=$5,post_body_ru=$6 WHERE id = $7 RETURNING id", home)
+	rows, err := repo.db.Exec(query, post.PostTitle, post.PostImgUrl, post.PostBody, tm, post.PostTitleRu, post.PostBodyRu, Id)
 
 	if err != nil {
 		logrus.Errorf("ERROR: Update home : %v", err)

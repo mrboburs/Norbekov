@@ -18,7 +18,7 @@ func NewServicesPostDB(db *sqlx.DB) *ServicePostDB {
 	return &ServicePostDB{db: db}
 }
 func (repo *ServicePostDB) GetAllService(logrus *logrus.Logger) (array []model.ServiceFull, err error) {
-	rowsRs, err := repo.db.Query("SELECT id,post_title,post_img_path,post_img_url, post_body, post_date ,price FROM services")
+	rowsRs, err := repo.db.Query("SELECT id,post_title,post_img_path,post_img_url, post_body, post_date ,price ,post_title_ru=$5,post_body_ru=$6 FROM services")
 
 	if err != nil {
 		logrus.Infof("ERROR: not selecting data from sql %s", err.Error())
@@ -31,7 +31,7 @@ func (repo *ServicePostDB) GetAllService(logrus *logrus.Logger) (array []model.S
 
 	for rowsRs.Next() {
 		snb := model.ServiceFull{}
-		err = rowsRs.Scan(&snb.ID, &snb.PostTitle, &snb.PostImgPath, &snb.PostImgUrl, &snb.PostBody, &snb.PostDate, &snb.Price)
+		err = rowsRs.Scan(&snb.ID, &snb.PostTitle, &snb.PostImgPath, &snb.PostImgUrl, &snb.PostBody, &snb.PostDate, &snb.Price, &snb.PostTitleRu, &snb.PostBodyRu)
 		if err != nil {
 			logrus.Infof("ERROR: not scanning data from sql %s", err.Error())
 			// log.Println(err)
@@ -49,9 +49,9 @@ func (repo *ServicePostDB) GetAllService(logrus *logrus.Logger) (array []model.S
 }
 func (repo *ServicePostDB) CreateServicePost(post model.ServicePost, logrus *logrus.Logger) (int, error) {
 	var id int
-	query := fmt.Sprintf("INSERT INTO %s (post_title ,post_img_url,   post_body,price ) VALUES ($1, $2, $3,$4)  RETURNING id", services)
+	query := fmt.Sprintf("INSERT INTO %s (post_title ,post_img_url,   post_body,price,post_title_ru,post_body_ru ) VALUES ($1, $2, $3,$4,$5,$6)  RETURNING id", services)
 
-	row := repo.db.QueryRow(query, post.PostTitle, post.PostImgUrl, post.PostBody, post.Price)
+	row := repo.db.QueryRow(query, post.PostTitle, post.PostImgUrl, post.PostBody, post.Price, post.PostTitleRu, post.PostBodyRu)
 
 	if err := row.Scan(&id); err != nil {
 		logrus.Infof("ERROR:PSQL Insert error %s", err.Error())
@@ -85,7 +85,7 @@ func (repo *ServicePostDB) UpdateServiceImage(ID int, filePath string, logrus *l
 
 func (repo *ServicePostDB) UpdateService(Id int, post model.ServicePost, logrus *logrus.Logger) (int64, error) {
 	tm := time.Now()
-	query := fmt.Sprintf("	UPDATE %s SET post_title =$1, post_img_url  = $2, post_body = $3,  updated_at=$4, price=$5 WHERE id = $6 RETURNING id", services)
+	query := fmt.Sprintf("	UPDATE %s SET post_title =$1, post_img_url  = $2, post_body = $3,  updated_at=$4, price=$5 ,post_title_ru=$6,post_body_ru=$7 WHERE id = $8 RETURNING id", services)
 	rows, err := repo.db.Exec(query, post.PostTitle, post.PostImgUrl, post.PostBody, tm, post.Price, Id)
 
 	if err != nil {
@@ -113,7 +113,7 @@ func (repo *ServicePostDB) DeleteService(id string, logrus *logrus.Logger) error
 func (repo *ServicePostDB) GetServiceById(id string, logrus *logrus.Logger) (model.ServiceFull, error) {
 
 	var post model.ServiceFull
-	query := fmt.Sprintf("SELECT  id, post_title, post_img_path,post_img_url, post_body, post_date,price  FROM %s WHERE id=$1 ", services)
+	query := fmt.Sprintf("SELECT  id, post_title, post_img_path,post_img_url, post_body, post_date,price ,post_title_ru,post_body_ru  FROM %s WHERE id=$1 ", services)
 	err := repo.db.Get(&post, query, id)
 	if err != nil {
 		logrus.Errorf("ERROR: don't get users %s", err)
