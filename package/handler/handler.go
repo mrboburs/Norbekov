@@ -33,6 +33,7 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()
+	router = gin.Default()
 	Config := cors.DefaultConfig()
 
 	Config.AllowOrigins = []string{"http://google.com"}
@@ -40,7 +41,7 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	// config.AllowAllOrigins = true
 
 	router.Use(cors.New(Config))
-	router.Run()
+
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	admin := router.Group("/admin")
 	{
