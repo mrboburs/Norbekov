@@ -3,7 +3,6 @@ package handler
 import (
 	// "fmt"
 	"fmt"
-	"time"
 	// "norbekov/docs"
 	"github.com/mrboburs/Norbekov/docs"
 	"github.com/mrboburs/Norbekov/package/service"
@@ -13,8 +12,6 @@ import (
 	_ "github.com/mrboburs/Norbekov/docs"
 
 	"github.com/gin-gonic/gin"
-
-	"github.com/gin-contrib/cors"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
@@ -35,18 +32,6 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()
-	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"https://foo.com"},
-		AllowMethods:     []string{"PUT", "PATCH"},
-		AllowHeaders:     []string{"Origin"},
-		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,
-		AllowOriginFunc: func(origin string) bool {
-			return origin == "https://github.com"
-		},
-		MaxAge: 12 * time.Hour,
-	}))
-	router.Run()
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	admin := router.Group("/admin")
 	{
