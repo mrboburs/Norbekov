@@ -54,9 +54,9 @@ func (repo *NewsPostDB) GetAllNews(logrus *logrus.Logger) (array []model.NewsFul
 }
 func (repo *NewsPostDB) CreateNewsPost(post model.NewsPost, logrus *logrus.Logger) (int, error) {
 	var id int
-	query := fmt.Sprintf("INSERT INTO %s (post_title ,post_img_url,   post_body ) VALUES ($1, $2, $3)  RETURNING id", news)
+	query := fmt.Sprintf("INSERT INTO %s (post_title ,post_img_url,   post_body,post_title_ru,post_body_ru ) VALUES ($1, $2, $3,$4,$5)  RETURNING id", news)
 
-	row := repo.db.QueryRow(query, post.PostTitle, post.PostImgUrl, post.PostBody)
+	row := repo.db.QueryRow(query, post.PostTitle, post.PostImgUrl, post.PostBody, post.PostTitleRu, post.PostBodyRu)
 
 	if err := row.Scan(&id); err != nil {
 		logrus.Infof("ERROR:PSQL Insert error %s", err.Error())
