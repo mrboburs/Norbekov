@@ -34,7 +34,7 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	fmt.Println(config)
 
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
-	router := gin.Default()
+	router := gin.New()
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"https://foo.com"},
 		AllowMethods:     []string{"PUT", "PATCH"},
