@@ -96,7 +96,7 @@ func (repo *TablePostDB) CreateCoursePost(post model.CourseFull, logrus *logrus.
 	tm := time.Now()
 	query := fmt.Sprintf("INSERT INTO %s (title ,body ,price,duration,term,format,created_at,post_title_ru,post_body_ru) VALUES ($1, $2, $3,$4,$5,$6,$7)  RETURNING id", "course")
 
-	row := repo.db.QueryRow(query, post.Title, post.Body, post.Price, post.Duration, post.Term, post.Format, tm)
+	row := repo.db.QueryRow(query, post.Title, post.Body, post.Price, post.Duration, post.Term, post.Format, tm, post.TitleRu, post.BodyRu)
 
 	if err := row.Scan(&id); err != nil {
 		logrus.Infof("ERROR:PSQL Insert error %s", err.Error())
