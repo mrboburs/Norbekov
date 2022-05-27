@@ -33,14 +33,11 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()
-	router = gin.Default()
-	Config := cors.DefaultConfig()
-
-	Config.AllowOrigins = []string{"http://google.com"}
-	// config.AllowOrigins = []string{"http://google.com", "http://facebook.com"}
-	// config.AllowAllOrigins = true
-
-	router.Use(cors.New(Config))
+	router.Use(cors.New(cors.Config{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{"GET", "POST", "PUT", "PATCH", "DELETE"},
+		AllowHeaders: []string{"Content-Type,access-control-allow-origin, access-control-allow-headers"},
+	}))
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	admin := router.Group("/admin")
