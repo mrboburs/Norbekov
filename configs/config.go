@@ -11,13 +11,13 @@ import (
 type Configs struct {
 	ServiceHost string
 	HTTPPort    string
-
-	DBHost     string
-	DBPort     string
-	DBUsername string
-	DBName     string
-	DBPassword string
-	DBSSLMode  string
+	Deploy      string
+	DBHost      string
+	DBPort      string
+	DBUsername  string
+	DBName      string
+	DBPassword  string
+	DBSSLMode   string
 }
 
 func InitConfig() (cfg *Configs, err error) {
@@ -39,13 +39,13 @@ func InitConfig() (cfg *Configs, err error) {
 
 		ServiceHost: viper.GetString("app.host"),
 		HTTPPort:    viper.GetString("app.port"),
-
-		DBHost:     viper.GetString("db.host"),
-		DBPort:     viper.GetString("db.port"),
-		DBUsername: viper.GetString("db.username"),
-		DBName:     viper.GetString("db.dbname"),
-		DBSSLMode:  viper.GetString("db.sslmode"),
-		DBPassword: os.Getenv("DB_PASSWORD"),
+		Deploy:      viper.GetString("app.deploy"),
+		DBHost:      viper.GetString("db.host"),
+		DBPort:      viper.GetString("db.port"),
+		DBUsername:  viper.GetString("db.username"),
+		DBName:      viper.GetString("db.dbname"),
+		DBSSLMode:   viper.GetString("db.sslmode"),
+		DBPassword:  os.Getenv("DB_PASSWORD"),
 	}
 	return
 }

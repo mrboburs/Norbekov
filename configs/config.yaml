@@ -1,6 +1,7 @@
 app:
    server: localhost
    port: '8080'
+   deploy: norbekov.herokuapp.com
   
 
 db:

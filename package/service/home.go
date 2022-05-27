@@ -35,7 +35,7 @@ func (s *HomeService) UpdateHome(id int, home model.HomePost, logrus *logrus.Log
 func (service *HomeService) UploadImage(file multipart.File, header *multipart.FileHeader, logrus *logrus.Logger) (string, error) {
 
 	filename := header.Filename
-	folderPath := "public/"
+	folderPath := "/public/"
 	err := os.MkdirAll(folderPath, 0777)
 	if err != nil {
 		logrus.Errorf("ERROR: Failed to create folder %s: %v", folderPath, err)
@@ -64,7 +64,7 @@ func (service *HomeService) UploadImage(file multipart.File, header *multipart.F
 	if err != nil {
 		logrus.Fatalf("error initializing configs: %s", err.Error())
 	}
-	imageURL := configs.ServiceHost + "/" + filePath
+	imageURL := configs.ServiceHost + configs.Deploy + filePath
 	return imageURL, nil
 }
 
