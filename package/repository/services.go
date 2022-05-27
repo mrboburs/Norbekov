@@ -18,7 +18,7 @@ func NewServicesPostDB(db *sqlx.DB) *ServicePostDB {
 	return &ServicePostDB{db: db}
 }
 func (repo *ServicePostDB) GetAllService(logrus *logrus.Logger) (array []model.ServiceFull, err error) {
-	rowsRs, err := repo.db.Query("SELECT id,post_title,post_img_path,post_img_url, post_body, post_date ,price ,post_title_ru=$5,post_body_ru=$6 FROM services")
+	rowsRs, err := repo.db.Query("SELECT id,post_title,post_img_path,post_img_url, post_body, post_date ,price ,post_title_ru,post_body_ru FROM services")
 
 	if err != nil {
 		logrus.Infof("ERROR: not selecting data from sql %s", err.Error())
