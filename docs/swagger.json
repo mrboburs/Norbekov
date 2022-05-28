@@ -199,6 +199,11 @@
         },
         "/api/contact/create": {
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "create contact_post",
                 "consumes": [
                     "application/json"
@@ -1552,11 +1557,6 @@
         },
         "/contacts/get": {
             "get": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
                 "description": "get  contacts",
                 "consumes": [
                     "application/json"
@@ -2155,6 +2155,9 @@
         "model.CourseFull": {
             "type": "object",
             "properties": {
+                "body": {
+                    "type": "string"
+                },
                 "body_ru": {
                     "type": "string"
                 },
@@ -2167,16 +2170,13 @@
                 "format": {
                     "type": "string"
                 },
-                "post_body": {
-                    "type": "string"
-                },
-                "post_title": {
-                    "type": "string"
-                },
                 "price": {
                     "type": "string"
                 },
                 "term": {
+                    "type": "string"
+                },
+                "title": {
                     "type": "string"
                 },
                 "title_ru": {
@@ -2340,7 +2340,13 @@
         "model.TableFull": {
             "type": "object",
             "properties": {
+                "date": {
+                    "type": "string"
+                },
                 "duration": {
+                    "type": "string"
+                },
+                "format": {
                     "type": "string"
                 },
                 "id": {
@@ -2375,7 +2381,13 @@
         "model.TablePost": {
             "type": "object",
             "properties": {
+                "date": {
+                    "type": "string"
+                },
                 "duration": {
+                    "type": "string"
+                },
+                "format": {
                     "type": "string"
                 },
                 "post_body": {

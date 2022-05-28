@@ -21,6 +21,7 @@ import (
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
 // @Router /api/contact/create [post]
+//@Security ApiKeyAuth
 func (handler *Handler) CreateContactPost(ctx *gin.Context) {
 	logrus := handler.logrus
 	var input model.Contact
@@ -49,7 +50,6 @@ func (handler *Handler) CreateContactPost(ctx *gin.Context) {
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
 // @Router /contacts/get [GET]
-//@Security ApiKeyAuth
 func (handler *Handler) GetAllContact(ctx *gin.Context) {
 	logrus := handler.logrus
 

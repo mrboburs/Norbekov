@@ -58,6 +58,8 @@ definitions:
     type: object
   model.CourseFull:
     properties:
+      body:
+        type: string
       body_ru:
         type: string
       date:
@@ -66,13 +68,11 @@ definitions:
         type: string
       format:
         type: string
-      post_body:
-        type: string
-      post_title:
-        type: string
       price:
         type: string
       term:
+        type: string
+      title:
         type: string
       title_ru:
         type: string
@@ -179,7 +179,11 @@ definitions:
     type: object
   model.TableFull:
     properties:
+      date:
+        type: string
       duration:
+        type: string
+      format:
         type: string
       id:
         type: integer
@@ -202,7 +206,11 @@ definitions:
     type: object
   model.TablePost:
     properties:
+      date:
+        type: string
       duration:
+        type: string
+      format:
         type: string
       post_body:
         type: string
@@ -422,6 +430,8 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/handler.errorResponse'
+      security:
+      - ApiKeyAuth: []
       summary: Create Contact
       tags:
       - Contact
@@ -1295,8 +1305,6 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
       summary: Get contacts
       tags:
       - Contact

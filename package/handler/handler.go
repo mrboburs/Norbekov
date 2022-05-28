@@ -11,6 +11,7 @@ import (
 	"github.com/mrboburs/Norbekov/configs"
 	_ "github.com/mrboburs/Norbekov/docs"
 
+	// "github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
@@ -32,9 +33,12 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()
-	router.Use(CORSMiddleware())
 
+	router.Use(CORSMiddleware())
+	router.Static("/public", "./norbekov.herokuapp.com/")
+	router.StaticFile("/favicon.ico", "./resources/favicon.ico")
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	// router.Use(static.Serve("/norbekov.herokuapp.com", static.LocalFile("./public", true)))
 	admin := router.Group("/admin")
 	{
 		admin.POST("/create", handler.CreateAdmin)
@@ -87,8 +91,8 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 		tables.GET("/course/get", handler.GetAllCourse)
 	}
 
-	contact := router.Group("/contact")
-	contacts := api.Group("/contacts")
+	contacts := router.Group("/contacts")
+	contact := api.Group("/contact")
 	{
 		contact.POST("/create", handler.CreateContactPost)
 		contacts.GET("/get", handler.GetAllContact)

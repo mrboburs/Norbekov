@@ -6,10 +6,11 @@ type TablePost struct {
 	PostBody    string `json:"post_body"`
 	PostTitleRu string `json:"post_title_ru"`
 	PostBodyRu  string `json:"post_body_ru"`
-
-	PostImgUrl string `json:"post_img_url"`
-	Price      string `json:"price" `
-	Duration   string `json:"duration" `
+	Date        string `json:"date" `
+	Format      string `json:"format" `
+	PostImgUrl  string `json:"post_img_url"`
+	Price       string `json:"price" `
+	Duration    string `json:"duration" `
 }
 
 type TableFull struct {
@@ -21,19 +22,20 @@ type TableFull struct {
 	PostImgPath string `json:"post_img_path" db:"post_img_path"`
 	PostImgUrl  string `json:"post_img_url" db:"post_img_url"`
 	PostBody    string `json:"post_body" db:"post_body"`
-
-	PostDate string `json:"post_date" db:"post_date"`
-	Price    string `json:"price" db:"price"`
-	Duration string `json:"duration" db:"duration"`
+	Date        string `json:"date" db:"date"`
+	Format      string `json:"format" db:"format"`
+	PostDate    string `json:"post_date" db:"post_date"`
+	Price       string `json:"price" db:"price"`
+	Duration    string `json:"duration" db:"duration"`
 }
 type allTable struct {
 	AllHome []TableFull
 }
 
 type CourseFull struct {
-	Title   string `json:"post_title" `
+	Title   string `json:"title" `
 	TitleRu string `json:"title_ru"`
-	Body    string `json:"post_body" `
+	Body    string `json:"body" `
 
 	BodyRu   string `json:"body_ru"`
 	Price    string `json:"price" `
@@ -45,8 +47,8 @@ type CourseFull struct {
 
 type CourseFull1 struct {
 	ID       int    `json:"id" db:"id"`
-	Title    string `json:"post_title" db:"post_title"`
-	Body     string `json:"post_body" db:"post_body"`
+	Title    string `json:"title" db:"title"`
+	Body     string `json:"body" db:"body"`
 	BodyRu   string `json:"body_ru" db:"body_ru"`
 	TitleRu  string `json:"title_ru" db:"title_ru"`
 	Price    string `json:"price" db:"price"`

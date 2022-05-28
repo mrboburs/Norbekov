@@ -206,6 +206,11 @@ const docTemplate = `{
         },
         "/api/contact/create": {
             "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "create contact_post",
                 "consumes": [
                     "application/json"
@@ -1559,11 +1564,6 @@ const docTemplate = `{
         },
         "/contacts/get": {
             "get": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
                 "description": "get  contacts",
                 "consumes": [
                     "application/json"
@@ -2162,6 +2162,9 @@ const docTemplate = `{
         "model.CourseFull": {
             "type": "object",
             "properties": {
+                "body": {
+                    "type": "string"
+                },
                 "body_ru": {
                     "type": "string"
                 },
@@ -2174,16 +2177,13 @@ const docTemplate = `{
                 "format": {
                     "type": "string"
                 },
-                "post_body": {
-                    "type": "string"
-                },
-                "post_title": {
-                    "type": "string"
-                },
                 "price": {
                     "type": "string"
                 },
                 "term": {
+                    "type": "string"
+                },
+                "title": {
                     "type": "string"
                 },
                 "title_ru": {
@@ -2347,7 +2347,13 @@ const docTemplate = `{
         "model.TableFull": {
             "type": "object",
             "properties": {
+                "date": {
+                    "type": "string"
+                },
                 "duration": {
+                    "type": "string"
+                },
+                "format": {
                     "type": "string"
                 },
                 "id": {
@@ -2382,7 +2388,13 @@ const docTemplate = `{
         "model.TablePost": {
             "type": "object",
             "properties": {
+                "date": {
+                    "type": "string"
+                },
                 "duration": {
+                    "type": "string"
+                },
+                "format": {
                     "type": "string"
                 },
                 "post_body": {
