@@ -85,8 +85,8 @@ func (repo *ServicePostDB) UpdateServiceImage(ID int, filePath string, logrus *l
 
 func (repo *ServicePostDB) UpdateService(Id int, post model.ServicePost, logrus *logrus.Logger) (int64, error) {
 	tm := time.Now()
-	query := fmt.Sprintf("	UPDATE %s SET post_title =$1, post_img_url  = $2, post_body = $3,  updated_at=$4, price=$5 ,post_title_ru=$6,post_body_ru=$7 WHERE id = $8 RETURNING id", services)
-	rows, err := repo.db.Exec(query, post.PostTitle, post.PostImgUrl, post.PostBody, tm, post.Price, Id)
+	query := fmt.Sprintf("	UPDATE %s SET post_title =$1, post_img_url  = $2, post_body = $3,  updated_at=$4, price=$5 ,post_title_ru=$6,post_body_ru=$7 WHERE id = $8 RETURNING id", "services")
+	rows, err := repo.db.Exec(query, post.PostTitle, post.PostImgUrl, post.PostBody, tm, post.Price, post.PostTitleRu, post.PostBodyRu, Id)
 
 	if err != nil {
 		logrus.Errorf("ERROR: Update home : %v", err)
@@ -102,7 +102,7 @@ func (repo *ServicePostDB) UpdateService(Id int, post model.ServicePost, logrus 
 }
 func (repo *ServicePostDB) DeleteService(id string, logrus *logrus.Logger) error {
 
-	_, err := repo.db.Exec("DELETE from service WHERE id = $1", id)
+	_, err := repo.db.Exec("DELETE from services WHERE id = $1", id)
 	if err != nil {
 		logrus.Errorf("ERROR: Update service : %v", err)
 		return err

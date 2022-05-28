@@ -148,7 +148,7 @@ func (repo *TablePostDB) UpdateTable(Id int, post model.TablePost, logrus *logru
 
 func (repo *TablePostDB) DeleteTable(id string, logrus *logrus.Logger) error {
 
-	_, err := repo.db.Exec("DELETE from table WHERE id = $1", id)
+	_, err := repo.db.Exec("DELETE from tables WHERE id = $1", id)
 	if err != nil {
 		logrus.Errorf("ERROR: Deleting table : %v", err)
 		return err
