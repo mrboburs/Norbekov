@@ -3,6 +3,7 @@ package handler
 import (
 	// "fmt"
 	"fmt"
+	// "net/http"
 	// "norbekov/docs"
 	"github.com/mrboburs/Norbekov/docs"
 	"github.com/mrboburs/Norbekov/package/service"
@@ -11,7 +12,7 @@ import (
 	"github.com/mrboburs/Norbekov/configs"
 	_ "github.com/mrboburs/Norbekov/docs"
 
-	"github.com/gin-gonic/contrib/static"
+	// "github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
@@ -35,10 +36,9 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	router := gin.New()
 
 	router.Use(CORSMiddleware())
-	// router.Static("/public", "./norbekov.herokuapp.com/")
-	router.Use(static.Serve("/norbekov.herokuapp.com/", static.LocalFile("./public", true)))
+	router.Static("/public", "./public/")
+
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-	// router.Use(static.Serve("/norbekov.herokuapp.com", static.LocalFile("./public", true)))
 	admin := router.Group("/admin")
 	{
 		admin.POST("/create", handler.CreateAdmin)
