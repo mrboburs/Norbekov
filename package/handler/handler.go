@@ -39,10 +39,9 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	router := gin.New()
 
 	router.Use(cors.New(cors.Config{
-		AllowAllOrigins:  true,
-		AllowHeaders:     []string{"*"},
-		AllowMethods:     []string{"*"},
-		AllowCredentials: true,
+		AllowOrigins: []string{"norbekov.herokuapp.com"},
+		AllowMethods: []string{"GET", "POST", "PUT", "PATCH", "DELETE"},
+		AllowHeaders: []string{"Content-Type,access-control-allow-origin, access-control-allow-headers"},
 	}))
 	// router.Use(cors.New(CORSConfig()))
 
