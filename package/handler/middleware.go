@@ -3,7 +3,7 @@ package handler
 import (
 	"errors"
 
-	"github.com/gin-contrib/cors"
+	// "github.com/gin-contrib/cors"
 	"github.com/mrboburs/Norbekov/util/logrus"
 
 	"net/http"
@@ -58,30 +58,17 @@ func getUserId(ctx *gin.Context, logrus *logrus.Logger) (int, error) {
 }
 
 func CORSMiddleware() gin.HandlerFunc {
+	return func(ctx *gin.Context) {
+		ctx.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		ctx.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+		ctx.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept,  Cache-Control, X-Requested-With, multipart-form-data, multipart/form-data ,X-Requested-With, X-Request-ID, X-HTTP-Method-Override, Upload-Length, Upload-Offset, Tus-Resumable, Upload-Concat, User-Agent, Referrer, Origin,  Location,  Tus-Version,  Tus-Max-Size, Tus-Extension, Upload-Metadata, Upload-Defer-Length, ")
+		ctx.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT , DELETE ,PATCH, HEAD, OPTIONS")
 
-	return func(c *gin.Context) {
-		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
-
-		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
-		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
-		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT,PATCH,DELETE")
-
-		if c.Request.Method == "OPTIONS" {
-			c.AbortWithStatus(204)
+		if ctx.Request.Method == "OPTIONS" {
+			ctx.AbortWithStatus(204)
 			return
 		}
 
-		c.Next()
+		ctx.Next()
 	}
-}
-func enableCors(w *http.ResponseWriter) {
-	(*w).Header().Set("Access-Control-Allow-Origin", "*")
-}
-func CORSConfig() cors.Config {
-	corsConfig := cors.DefaultConfig()
-	corsConfig.AllowOrigins = []string{"http://norbekov.herokuapp.com"}
-	corsConfig.AllowCredentials = true
-	corsConfig.AddAllowHeaders("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers", "Content-Type", "X-XSRF-TOKEN", "Accept", "Origin", "X-Requested-With", "Authorization")
-	corsConfig.AddAllowMethods("GET", "POST", "PUT", "DELETE")
-	return corsConfig
 }
