@@ -4,7 +4,10 @@ import (
 	// "fmt"
 	"fmt"
 	// "net/http"
+
+	// "net/http"
 	// "norbekov/docs"
+	"github.com/gin-contrib/cors"
 	"github.com/mrboburs/Norbekov/docs"
 	"github.com/mrboburs/Norbekov/package/service"
 	"github.com/mrboburs/Norbekov/util/logrus"
@@ -36,6 +39,8 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	router := gin.New()
 
 	router.Use(CORSMiddleware())
+	router.Use(cors.New(CORSConfig()))
+
 	router.Static("/public", "./public/")
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
