@@ -40,7 +40,7 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 		AllowMethods: []string{"GET", "POST", "PUT", "PATCH", "DELETE"},
 		AllowHeaders: []string{"Content-Type,access-control-allow-origin, access-control-allow-headers"},
 	}))
-	router.Use(CORSMiddleware())
+	// router.Use(CORSMiddleware())
 	router.Static("/public", "./public/")
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
