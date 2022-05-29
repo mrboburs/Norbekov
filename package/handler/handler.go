@@ -38,8 +38,13 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()
 
-	router.Use(CORSMiddleware())
-	router.Use(cors.New(CORSConfig()))
+	router.Use(cors.New(cors.Config{
+		AllowAllOrigins:  true,
+		AllowHeaders:     []string{"*"},
+		AllowMethods:     []string{"*"},
+		AllowCredentials: true,
+	}))
+	// router.Use(cors.New(CORSConfig()))
 
 	router.Static("/public", "./public/")
 
