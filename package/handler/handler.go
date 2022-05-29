@@ -5,6 +5,7 @@ import (
 	"fmt"
 	// "net/http"
 	// "norbekov/docs"
+	"github.com/gin-contrib/cors"
 	"github.com/mrboburs/Norbekov/docs"
 	"github.com/mrboburs/Norbekov/package/service"
 	"github.com/mrboburs/Norbekov/util/logrus"
@@ -34,7 +35,11 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()
-
+	router.Use(cors.New(cors.Config{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{"GET", "POST", "PUT", "PATCH", "DELETE"},
+		AllowHeaders: []string{"Content-Type,access-control-allow-origin, access-control-allow-headers"},
+	}))
 	router.Use(CORSMiddleware())
 	router.Static("/public", "./public/")
 
