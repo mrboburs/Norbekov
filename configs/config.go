@@ -45,7 +45,7 @@ func InitConfig() (cfg *Configs, err error) {
 		DBUsername:  viper.GetString("db.username"),
 		DBName:      viper.GetString("db.dbname"),
 		DBSSLMode:   viper.GetString("db.sslmode"),
-		DBPassword:  os.Getenv("DB_PASSWORD"),
+		DBPassword:  os.Getenv("POSTGRES_PASSWORD"),
 	}
 	return
 }

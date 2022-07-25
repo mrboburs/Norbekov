@@ -1,1 +1,1 @@
-{"buildTargets":["migrate-down","migrate-up","run-go","run-psql","run-redis","start-psql","start-redis","swag"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["build","create-env","lint","make","migrate","proto-gen","set-env","update-go-deps","vendor"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

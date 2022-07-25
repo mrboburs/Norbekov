@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jul 26 00:31:33 2022
+# Make data base, printed on Tue Jul 26 01:14:59 2022
 
 # Variables
 
@@ -30,6 +30,8 @@ SNAP_COMMON = /var/snap/code/common
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+# environment
+IM_CONFIG_PHASE = 1
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -45,23 +47,21 @@ SHELL = /bin/sh
 # environment
 SNAP_DATA = /var/snap/code/102
 # environment
-VTE_VERSION = 6003
-# environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:45198
+JOURNAL_STREAM = 8:41845
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
 SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+# makefile (from '.env', line 1)
+MAKEFILE_LIST :=  Makefile .env
 # automatic
 @F = $(notdir $@)
 # environment
-IM_CONFIG_PHASE = 1
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
 USERNAME = bobur
 # environment
@@ -71,27 +71,33 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=8f21f3ac00bd331caad5509b62dec027
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-MANAGERPID = 1577
+_ = /snap/code/102/usr/share/code/code
+# environment
+MANAGERPID = 1448
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = uz_UZ.UTF-8
 # environment
-VSCODE_CWD = /home/bobur/p/Norbekov
+VSCODE_CWD = /home/bobur
 # environment
 GOPROXY = https://proxy.golang.org,direct
+# makefile (from '.env', line 6)
+POSTGRES_PASSWORD = 1996
 # environment
 GSETTINGS_SCHEMA_DIR = /snap/code/102/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/go/bin
+PATH = /usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/go/bin:/home/bobur/go/bin
+# makefile (from 'Makefile', line 7)
+IMG_NAME = ${APP}
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/bobur-Aspire-E5-573G:@/tmp/.ICE-unix/1860,unix/bobur-Aspire-E5-573G:/tmp/.ICE-unix/1860
+SESSION_MANAGER = local/bobur-Aspire-E5-573G:@/tmp/.ICE-unix/1898,unix/bobur-Aspire-E5-573G:/tmp/.ICE-unix/1898
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -100,6 +106,8 @@ GDK_PIXBUF_MODULE_FILE = /home/bobur/snap/code/common/.cache/gdk-pixbuf-loaders.
 SNAP = /snap/code/102
 # environment
 GOPATH = /home/bobur/go
+# makefile (from 'Makefile', line 5)
+PKG_LIST := github.com/mrboburs/Norbekov/command github.com/mrboburs/Norbekov/configs github.com/mrboburs/Norbekov/docs github.com/mrboburs/Norbekov/model github.com/mrboburs/Norbekov/package/handler github.com/mrboburs/Norbekov/package/repository github.com/mrboburs/Norbekov/package/service github.com/mrboburs/Norbekov/server github.com/mrboburs/Norbekov/util/logrus
 # environment
 SNAP_VERSION = 3b889b09
 # environment
@@ -109,17 +117,23 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 772dcaebfe40461fb9dc61981ab5321b
+INVOCATION_ID = 908c74c5ef4f41a18d1f8fde13c4a2e2
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/102/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 9)
+TAG = latest
 # environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LS_COLORS = 
+# makefile (from '.env', line 5)
+POSTGRES_USER = postgres
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2242
 # automatic
 %F = $(notdir $%)
 # environment
@@ -131,11 +145,13 @@ PWD = /home/bobur/p/Norbekov
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1822
+SSH_AGENT_PID = 1860
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
 GTK_MODULES = gail:atk-bridge
+# makefile (from '.env', line 9)
+RPC_PORT = :9000
 # environment
 GOMODCACHE = /home/bobur/go/pkg/mod
 # environment
@@ -166,12 +182,14 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
+# makefile (from '.env', line 2)
+POSTGRES_HOST = localhost
 # environment
 LC_TIME = uz_UZ.UTF-8
 # environment
 SNAP_REAL_HOME = /home/bobur
-# environment
-COLORTERM = truecolor
+# makefile (from '.env', line 3)
+POSTGRES_PORT = 5432
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -181,7 +199,11 @@ QT_IM_MODULE = ibus
 # environment
 SNAP_USER_DATA = /home/bobur/snap/code/102
 # environment
-SHLVL = 1
+SHLVL = 0
+# makefile (from '.env', line 8)
+LOG_LEVEL = debug
+# makefile (from '.env', line 4)
+POSTGRES_DB = postgres
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # default
@@ -190,10 +212,12 @@ MAKE_VERSION := 4.2.1
 USER = bobur
 # environment
 SNAP_REVISION = 102
+# makefile (from '.env', line 7)
+POSTGRES_SSLMODE = disable
 # environment
 LC_MONETARY = uz_UZ.UTF-8
 # makefile
-.DEFAULT_GOAL := run-go
+.DEFAULT_GOAL := make
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -202,6 +226,8 @@ GOROOT = /usr/local/go
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 LC_TELEPHONE = uz_UZ.UTF-8
+# makefile (from 'Makefile', line 2)
+APP = $(shell basename ${CURRENT_DIR})
 # default
 MAKE_COMMAND := make
 # default
@@ -210,8 +236,14 @@ MAKE_COMMAND := make
 *F = $(notdir $*)
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-5ad521b1-1.69.2-main.sock
+# makefile (from 'Makefile', line 1)
+CURRENT_DIR = $(shell pwd)
+# environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile
 MAKEFLAGS = pqrR
+# makefile (from 'Makefile', line 10)
+ENV_TAG = latest
 # environment
 MFLAGS = -pqrR
 # automatic
@@ -223,7 +255,11 @@ GDK_BACKEND = x11
 # environment
 LC_PAPER = uz_UZ.UTF-8
 # environment
+LC_IDENTIFICATION = uz_UZ.UTF-8
+# environment
 QT_ACCESSIBILITY = 1
+# 'override' directive
+.SHELLSTATUS := 0
 # default
 MAKEFILES := 
 # environment
@@ -238,14 +274,12 @@ LC_MEASUREMENT = uz_UZ.UTF-8
 SNAP_NAME = code
 # environment
 LC_ALL = C
+# makefile (from '.env', line 1)
+ENVIRONMENT = develop
 # environment
-DBUS_STARTER_BUS_TYPE = session
-# environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/df178734_ffcf_4a5a_9b75_009fe470deaf
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # automatic
 ^F = $(notdir $^)
-# environment
-GNOME_TERMINAL_SERVICE = :1.445
 # default
 SUFFIXES := 
 # environment
@@ -255,23 +289,24 @@ CHROME_DESKTOP = code-url-handler.desktop
 # environment
 WINDOWPATH = 2
 # default
+ 
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-LC_IDENTIFICATION = uz_UZ.UTF-8
+GJS_DEBUG_OUTPUT = stderr
+# makefile (from 'Makefile', line 4)
+APP_CMD_DIR = ${CURRENT_DIR}/cmd
 # default
 .RECIPEPREFIX := 
 # environment
 LC_ADDRESS = uz_UZ.UTF-8
 # environment
 LANG = C
+# makefile (from 'Makefile', line 8)
+REGISTRY = ${REGISTRY:-861701250313.dkr.ecr.us-east-1.amazonaws.com}
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 23443
-# environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=8f21f3ac00bd331caad5509b62dec027
+VSCODE_PID = 2288
 # variable set hash-table stats:
-# Load=129/1024=13%, Rehash=0, Collisions=19/154=12%
+# Load=146/1024=14%, Rehash=0, Collisions=28/177=16%
 
 # Pattern-specific Variable Values
 
@@ -279,30 +314,15 @@ DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=8f21f3ac00bd331caad5509
 
 # Directories
 
-# . (device 2053, inode 6559208): 18 files, no impossibilities.
+# . (device 2053, inode 6559208): 19 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
 
 # Files
-
-migrate-up:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
- 
-	migrate -path ./schema -database 'postgresql://ybvyqagf:pYnwpFYKWTfe0kLSGm2Mhi-a71u94xzo@dumbo.db.elephantsql.com:5432/ybvyqagf?sslmode=disable' up
-
-migrate-down:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
-	migrate -path ./schema -database 'postgresql://ybvyqagf:pYnwpFYKWTfe0kLSGm2Mhi-a71u94xzo@dumbo.db.elephantsql.com:5432/ybvyqagf?sslmode=disable' down
 
 # Not a target:
 all:
@@ -311,33 +331,52 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
+proto-gen:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 30):
+	./scripts/gen-proto.sh  ${CURRENT_DIR}
+
+.PHONY: vendor
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-26 00:30:55.319703137
+#  Last modified 2022-07-26 00:40:12.691895538
 #  File has been updated.
 #  Successfully updated.
 
-run-go:
+build:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 3):
-	go run command/main.go
+#  recipe to execute (from 'Makefile', line 27):
+	CGO_ENABLED=0 GOOS=linux go build -mod=vendor -a -installsuffix cgo -o ${CURRENT_DIR}/bin/${APP} ${APP_CMD_DIR}/main.go
 
-start-psql:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 12):
-	sudo docker run medium-db 
+# Not a target:
+.env:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-26 00:40:38.951216186
+#  File has been updated.
+#  Successfully updated.
 
-run-redis:
+migrate: set-env
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 9):
-	sudo docker start redisdb
+#  recipe to execute (from 'Makefile', line 33):
+	env POSTGRES_HOST=${POSTGRES_HOST} env POSTGRES_PORT=${POSTGRES_PORT} env POSTGRES_USER=${POSTGRES_USER} env POSTGRES_PASSWORD=${POSTGRES_PASSWORD} env POSTGRES_DB=${POSTGRES_DB} ./scripts/migrate-jeyran.sh
+
+set-env:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
+	./scripts/set-env.sh ${CURRENT_DIR}
 
 # Not a target:
 .DEFAULT:
@@ -345,41 +384,58 @@ run-redis:
 #  Modification time never checked.
 #  File has not been updated.
 
-start-redis:
+make:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
-	sudo docker run redis-test-instance 
+#  recipe to execute (from 'Makefile', line 21):
+	cp ./.env.example ./.env
 
-run-psql:
+create-env:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 6):
-	sudo docker start mediumuz
+#  recipe to execute (from 'Makefile', line 21):
+	cp ./.env.example ./.env
 
-swag:
+update-go-deps:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 18):
-	swag init -g command/main.go
+#  recipe to execute (from 'Makefile', line 40):
+	@echo ">> updating Go dependencies"
+	@for m in $$(go list -mod=readonly -m -f '{{ if and (not .Indirect) (not .Main)}}{{.Path}}{{end}}' all); do \
+		go get $$m; \
+	done
+	go mod tidy
+
+lint:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 37):
+	golint -set_exit_status ${PKG_LIST}
+
+vendor:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=2/22=9%
+# Load=15/1024=1%, Rehash=0, Collisions=0/28=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 31 / storage = 250 B / avg = 8 B
-# current buf: size = 8162 B / used = 250 B / count = 31 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 34 / storage = 262 B / avg = 7 B
+# current buf: size = 8162 B / used = 262 B / count = 34 / avg = 7 B
 
-# strcache performance: lookups = 43 / hit rate = 27%
+# strcache performance: lookups = 50 / hit rate = 32%
 # hash-table stats:
-# Load=31/8192=0%, Rehash=0, Collisions=1/43=2%
-# Finished Make data base on Tue Jul 26 00:31:33 2022
+# Load=34/8192=0%, Rehash=0, Collisions=1/50=2%
+# Finished Make data base on Tue Jul 26 01:14:59 2022
 
  
