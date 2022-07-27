@@ -48,3 +48,6 @@ ifneq (,$(wildcard vendor))
 endif
 
 .PHONY: vendor
+
+swag:
+	swag init -g command/main.go

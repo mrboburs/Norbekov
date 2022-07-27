@@ -24,7 +24,7 @@ import (
 // @title Norbekov API
 // @version 1.0
 // @description API Server for Norbekov App
-// @host norbekov.herokuapp.com
+// @host localhost:8080
 // @BasePath /
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header
@@ -34,7 +34,7 @@ import (
 func main() {
 
 	logrus := logrus.GetLogger()
-	port := os.Getenv("RPC_PORT")
+	port := os.Getenv("PORT")
 	if len(port) == 0 {
 		port = "8080"
 	}

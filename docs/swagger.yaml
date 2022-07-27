@@ -262,8 +262,7 @@ definitions:
     type: object
 host: norbekov.herokuapp.com
 info:
-  contact:
-    name: Mr Bobur
+  contact: {}
   description: API Server for Norbekov App
   title: Norbekov API
   version: "1.0"

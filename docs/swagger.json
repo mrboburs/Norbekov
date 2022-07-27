@@ -3,9 +3,7 @@
     "info": {
         "description": "API Server for Norbekov App",
         "title": "Norbekov API",
-        "contact": {
-            "name": "Mr Bobur"
-        },
+        "contact": {},
         "version": "1.0"
     },
     "host": "norbekov.herokuapp.com",

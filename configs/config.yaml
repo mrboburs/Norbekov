@@ -1,15 +1,13 @@
-app:
-   server: localhost
-   port: '8080'
-   deploy: norbekov.herokuapp.com
+
+
   
 
 db:
-   dbname: ybvyqagf
-   host: 	dumbo.db.elephantsql.com 
+   dbname: postgres
+   host: 	localhost
    port: '5432'
    sslmode: disable
-   username: ybvyqagf
+   username: postgres
 
 
 
