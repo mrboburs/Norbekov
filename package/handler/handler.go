@@ -35,11 +35,10 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()
-	// router.Use(cors.New(cors.Config{
-	// 	AllowOrigins: []string{"*"},
-	// 	AllowMethods: []string{"GET", "POST", "PUT", "PATCH", "DELETE"},
-	// 	AllowHeaders: []string{"Content-Type,access-control-allow-origin, access-control-allow-headers"},
-	// }))
+	docs.SwaggerInfo.Host = config.Deploy
+	// docs.SwaggerInfo_swagger.Version = config.Version
+	// docs.SwaggerInfo_swagger.Host = config.ServiceHost + config.HTTPPort
+	// docs.SwaggerInfo_swagger.Schemes = []string{ "https"}
 	router.Use(CORSMiddleware())
 	router.Static("/public", "./public/")
 

@@ -1,6 +1,7 @@
 
-
-  
+app:
+   port: '8080'
+   deploy: localhost:8080 
 
 db:
    dbname: postgres

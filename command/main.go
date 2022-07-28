@@ -70,5 +70,5 @@ func main() {
 		logrus.Fatalf("error occurred while running http server: %s", err.Error())
 	}
 
-	defer logrus.Infof("run server port:%v", configs.HTTPPort)
+	defer logrus.Infof("run server port:%v", port)
 }

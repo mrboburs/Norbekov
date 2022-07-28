@@ -260,7 +260,7 @@ definitions:
           $ref: '#/definitions/model.TableFull'
         type: array
     type: object
-host: norbekov.herokuapp.com
+host: localhost:8080
 info:
   contact: {}
   description: API Server for Norbekov App
