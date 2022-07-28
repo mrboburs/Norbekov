@@ -11,19 +11,18 @@ import (
 type Configs struct {
 	ServiceHost string
 	HTTPPort    string
-	Deploy      string
-	DBHost      string
-	DBPort      string
-	DBUsername  string
-	DBName      string
-	DBPassword  string
-	DBSSLMode   string
+
+	DBHost     string
+	DBPort     string
+	DBUsername string
+	DBName     string
+	DBPassword string
+	DBSSLMode  string
 }
 
 func InitConfig() (cfg *Configs, err error) {
 	viper.AddConfigPath("./configs")
 	viper.SetConfigName("config")
-	viper.SetConfigType("yaml")
 
 	err = viper.ReadInConfig()
 
@@ -37,15 +36,15 @@ func InitConfig() (cfg *Configs, err error) {
 
 	cfg = &Configs{
 
-		ServiceHost: viper.GetString("app.deploy"),
-		HTTPPort:    viper.GetString("app.port"),
-		Deploy:      viper.GetString("app.deploy"),
-		DBHost:      viper.GetString("db.host"),
-		DBPort:      viper.GetString("db.port"),
-		DBUsername:  viper.GetString("db.username"),
-		DBName:      viper.GetString("db.dbname"),
-		DBSSLMode:   viper.GetString("db.sslmode"),
-		DBPassword:  os.Getenv("POSTGRES_PASSWORD"),
+		ServiceHost: os.Getenv("DEPLOY"),
+		HTTPPort:    os.Getenv("PORT"),
+
+		DBHost:     os.Getenv("POSTGRES_HOST"),
+		DBPort:     os.Getenv("POSTGRES_PORT"),
+		DBUsername: os.Getenv("POSTGRES_USER"),
+		DBName:     os.Getenv("POSTGRES_DB"),
+		DBSSLMode:  os.Getenv("POSTGRES_SSLMODE"),
+		DBPassword: os.Getenv("POSTGRES_PASSWORD"),
 	}
 	return
 }

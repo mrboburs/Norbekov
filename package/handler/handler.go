@@ -35,7 +35,7 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()
-	docs.SwaggerInfo.Host = config.Deploy
+
 	// docs.SwaggerInfo_swagger.Version = config.Version
 	// docs.SwaggerInfo_swagger.Host = config.ServiceHost + config.HTTPPort
 	// docs.SwaggerInfo_swagger.Schemes = []string{ "https"}
