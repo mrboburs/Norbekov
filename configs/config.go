@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/spf13/viper"
+	// "github.com/spf13/viper"
 )
 
 type Configs struct {
@@ -21,14 +21,8 @@ type Configs struct {
 }
 
 func InitConfig() (cfg *Configs, err error) {
-	viper.AddConfigPath("./configs")
-	viper.SetConfigName("config")
 
-	err = viper.ReadInConfig()
-
-	if err != nil {
-		return cfg, fmt.Errorf("fatal error config file: %w ", err)
-	}
+	fmt.Println("not here")
 
 	if err := godotenv.Load(); err != nil {
 		return cfg, fmt.Errorf("error loading env variables: %s", err.Error())
