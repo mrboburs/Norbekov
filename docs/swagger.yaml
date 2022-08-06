@@ -384,56 +384,9 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
       summary: Login Admin
       tags:
       - Admin
-  /api/contact/create:
-    post:
-      consumes:
-      - application/json
-      description: create contact_post
-      operationId: create-contact_post
-      parameters:
-      - description: home info
-        in: body
-        name: input
-        required: true
-        schema:
-          $ref: '#/definitions/model.Contact'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/handler.ResponseSuccess'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        "409":
-          description: Conflict
-          schema:
-            $ref: '#/definitions/handler.errorResponseData'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-        default:
-          description: ""
-          schema:
-            $ref: '#/definitions/handler.errorResponse'
-      security:
-      - ApiKeyAuth: []
-      summary: Create Contact
-      tags:
-      - Contact
   /api/home/create:
     post:
       consumes:
@@ -1275,7 +1228,50 @@ paths:
       summary: Upload Table Image
       tags:
       - Table
-  /contacts/get:
+  /contact/create:
+    post:
+      consumes:
+      - application/json
+      description: create contact_post
+      operationId: create-contact_post
+      parameters:
+      - description: home info
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/model.Contact'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ResponseSuccess'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/handler.errorResponseData'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/handler.errorResponse'
+      summary: Create Contact
+      tags:
+      - Contact
+  /contact/get:
     get:
       consumes:
       - application/json

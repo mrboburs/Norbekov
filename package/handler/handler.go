@@ -36,10 +36,6 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
 	router := gin.New()
 
-	// docs.SwaggerInfo_swagger.Version = config.Version
-	// docs.SwaggerInfo_swagger.Host = config.ServiceHost + config.HTTPPort
-	// docs.SwaggerInfo_swagger.Schemes = []string{ "https"}
-	router.Use(CORSMiddleware())
 	router.Static("/public", "./public/")
 
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
@@ -95,11 +91,10 @@ func (handler *Handler) InitRoutes() *gin.Engine {
 		tables.GET("/course/get", handler.GetAllCourse)
 	}
 
-	contacts := router.Group("/contacts")
-	contact := api.Group("/contact")
+	contact := router.Group("/contact")
 	{
 		contact.POST("/create", handler.CreateContactPost)
-		contacts.GET("/get", handler.GetAllContact)
+		contact.GET("/get", handler.GetAllContact)
 	}
 
 	return router

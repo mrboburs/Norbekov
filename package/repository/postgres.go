@@ -2,9 +2,20 @@ package repository
 
 import (
 	"fmt"
+	// "log"
+
 	"github.com/mrboburs/Norbekov/util/logrus"
 
 	"github.com/jmoiron/sqlx"
+)
+
+const (
+	home     = "home"
+	contact  = "contact"
+	news     = "news"
+	tables   = "tables"
+	services = "services"
+	admin    = "admin"
 )
 
 type Config struct {
@@ -16,15 +27,6 @@ type Config struct {
 	SSLMode  string
 }
 
-const (
-	home     = "home"
-	contact  = "contact"
-	news     = "news"
-	tables   = "tables"
-	services = "services"
-	admin    = "admin"
-)
-
 func NewPostgresDB(cfg Config, logrus *logrus.Logger) (*sqlx.DB, error) {
 
 	db, err := sqlx.Open("postgres", fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=%s",
@@ -32,6 +34,7 @@ func NewPostgresDB(cfg Config, logrus *logrus.Logger) (*sqlx.DB, error) {
 	logrus.Infof("check db configs %v", cfg)
 	if err != nil {
 		logrus.Fatalf("failed check db confis.%v", err)
+
 		return nil, err
 	}
 	logrus.Info("success checked configs.")

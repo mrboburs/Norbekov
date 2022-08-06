@@ -75,7 +75,6 @@ func (h *Handler) DeleteAdmin(ctx *gin.Context) {
 // @Failure 500 {object} errorResponse
 // @Failure default {object} errorResponse
 // @Router /admin/login [post]
-//@Security ApiKeyAuth
 func (h *Handler) LoginAdmin(ctx *gin.Context) {
 	logrus := h.logrus
 	var input model.Admin

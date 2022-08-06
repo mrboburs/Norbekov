@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug  5 18:06:40 2022
+# Make data base, printed on Sat Aug  6 12:39:24 2022
 
 # Variables
 
@@ -49,7 +49,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:44579
+JOURNAL_STREAM = 8:43798
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -73,7 +73,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-MANAGERPID = 1617
+MANAGERPID = 1486
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -95,7 +95,7 @@ IMG_NAME = ${APP}
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/bobur-Aspire-E5-573G:@/tmp/.ICE-unix/1868,unix/bobur-Aspire-E5-573G:/tmp/.ICE-unix/1868
+SESSION_MANAGER = local/bobur-Aspire-E5-573G:@/tmp/.ICE-unix/1881,unix/bobur-Aspire-E5-573G:/tmp/.ICE-unix/1881
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -117,7 +117,7 @@ ELECTRON_RUN_AS_NODE = 1
 # makefile (from '.env', line 9)
 PORT = :8080
 # environment
-INVOCATION_ID = aef077ef2fa3442fb2915e72e021a783
+INVOCATION_ID = 2ce153d5eb43492ebf1ea653d09b8570
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/103/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -145,7 +145,7 @@ PWD = /home/bobur/p/Norbekov
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1830
+SSH_AGENT_PID = 1843
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -183,13 +183,13 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # makefile (from '.env', line 2)
-POSTGRES_HOST = 13.231.124.255
+POSTGRES_HOST = 159.69.154.126
 # environment
 LC_TIME = uz_UZ.UTF-8
 # environment
 SNAP_REAL_HOME = /home/bobur
 # makefile (from '.env', line 3)
-POSTGRES_PORT = 4001
+POSTGRES_PORT = 5000
 # environment
 COLORTERM = truecolor
 # default
@@ -277,16 +277,16 @@ SNAP_NAME = code
 # environment
 LC_ALL = C
 # makefile (from '.env', line 1)
+ 
 ENVIRONMENT = develop
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/b05ab844_014a_45d8_b664_47cbc50175d0
- 
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/a0f240cb_5a86_4de6_bf10_918a8e476323
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.96
+GNOME_TERMINAL_SERVICE = :1.143
 # default
 SUFFIXES := 
 # environment
@@ -310,7 +310,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 2698
+VSCODE_PID = 3386
 # variable set hash-table stats:
 # Load=149/1024=15%, Rehash=0, Collisions=27/180=15%
 
@@ -366,7 +366,7 @@ build:
 # Not a target:
 .env:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-03 10:11:36.595622476
+#  Last modified 2022-08-05 23:27:00.190485556
 #  File has been updated.
 #  Successfully updated.
 
@@ -449,6 +449,6 @@ vendor:
 # strcache performance: lookups = 53 / hit rate = 32%
 # hash-table stats:
 # Load=36/8192=0%, Rehash=0, Collisions=1/53=2%
-# Finished Make data base on Fri Aug  5 18:06:40 2022
+# Finished Make data base on Sat Aug  6 12:39:24 2022
 
  

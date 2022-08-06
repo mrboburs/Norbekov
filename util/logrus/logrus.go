@@ -2,6 +2,9 @@ package logrus
 
 import (
 	"fmt"
+	"os"
+	// "io"
+
 	"path"
 	"runtime"
 
@@ -23,7 +26,12 @@ func (log *Logger) GetLoggerWithField(k string, v interface{}) *Logger {
 }
 
 func init() {
+
 	log := logrus.New()
+
+	file, _ := os.OpenFile("logrus.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+	log.SetOutput(file)
+
 	log.SetReportCaller(true)
 	log.Formatter = &logrus.TextFormatter{
 		CallerPrettyfier: func(frame *runtime.Frame) (function string, file string) {
