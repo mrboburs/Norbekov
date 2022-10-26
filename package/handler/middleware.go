@@ -59,17 +59,15 @@ func getUserId(ctx *gin.Context, logrus *logrus.Logger) (int, error) {
 
 func CORSMiddleware() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
+		ctx.Writer.Header().Set("Content-Type", "application/json,multipart/form-data")
 		ctx.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		ctx.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
-
-		ctx.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept,  Cache-Control, X-Requested-With, multipart-form-data, multipart/form-data ,X-Requested-With, X-Request-ID, X-HTTP-Method-Override, Upload-Length, Upload-Offset, Tus-Resumable, Upload-Concat, User-Agent, Referrer, Origin,  Location,  Tus-Version,  Tus-Max-Size, Tus-Extension, Upload-Metadata, Upload-Defer-Length, ")
-		ctx.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT , DELETE ,PATCH, HEAD, OPTIONS")
-
+		ctx.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
+		ctx.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT , DELETE ,PATCH, HEAD")
 		if ctx.Request.Method == "OPTIONS" {
 			ctx.AbortWithStatus(204)
 			return
 		}
-
 		ctx.Next()
 	}
 }
