@@ -1,6 +1,22 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/bobur/p/Norbekov'
+make: Entering directory '/home/bobur/Apps/Norbekov'
  
+go: downloading github.com/swaggo/gin-swagger v1.4.3
+
+go: downloading golang.org/x/sys v0.0.0-20220412211240-33da011f77ad
+
+go: downloading github.com/go-playground/validator/v10 v10.4.1
+
+go: downloading github.com/ugorji/go/codec v1.1.7
+
+go: downloading github.com/go-playground/universal-translator v0.17.0
+
+go: downloading github.com/leodido/go-urn v1.2.0
+
+go: downloading golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4
+
+go: downloading github.com/go-playground/locales v0.13.0
+
 cp ./.env.example ./.env
-make: Leaving directory '/home/bobur/p/Norbekov'
+make: Leaving directory '/home/bobur/Apps/Norbekov'
  

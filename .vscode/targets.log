@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Aug  6 12:39:24 2022
+# Make data base, printed on Wed Oct 26 07:43:12 2022
 
 # Variables
 
@@ -30,6 +30,8 @@ SNAP_COMMON = /var/snap/code/common
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+# environment
+IM_CONFIG_PHASE = 1
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -39,17 +41,15 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/bobur/p/Norbekov
+CURDIR := /home/bobur/Apps/Norbekov
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/103
-# environment
-VTE_VERSION = 6003
+SNAP_DATA = /var/snap/code/111
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:43798
+JOURNAL_STREAM = 8:49387
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -61,7 +61,7 @@ MAKEFILE_LIST :=  Makefile .env
 # automatic
 @F = $(notdir $@)
 # environment
-IM_CONFIG_PHASE = 1
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
 USERNAME = bobur
 # environment
@@ -71,69 +71,70 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=ad7674b1b56277ffb17c89076358907c
 # environment
-MANAGERPID = 1486
+_ = /snap/code/111/usr/share/code/code
+# environment
+MANAGERPID = 1986
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = uz_UZ.UTF-8
 # environment
-VSCODE_CWD = /home/bobur/p/Norbekov
+VSCODE_CWD = /home/bobur
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # makefile (from '.env', line 6)
 POSTGRES_PASSWORD = 0224
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/103/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/111/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/go/bin
+PATH = /usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # makefile (from 'Makefile', line 7)
 IMG_NAME = ${APP}
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/bobur-Aspire-E5-573G:@/tmp/.ICE-unix/1881,unix/bobur-Aspire-E5-573G:/tmp/.ICE-unix/1881
+SESSION_MANAGER = local/bobur-Aspire-E5-573G:@/tmp/.ICE-unix/2206,unix/bobur-Aspire-E5-573G:/tmp/.ICE-unix/2206
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/bobur/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/103
+SNAP = /snap/code/111
 # environment
 GOPATH = /home/bobur/go
 # makefile (from 'Makefile', line 5)
 PKG_LIST := github.com/mrboburs/Norbekov/command github.com/mrboburs/Norbekov/configs github.com/mrboburs/Norbekov/docs github.com/mrboburs/Norbekov/model github.com/mrboburs/Norbekov/package/handler github.com/mrboburs/Norbekov/package/repository github.com/mrboburs/Norbekov/package/service github.com/mrboburs/Norbekov/server github.com/mrboburs/Norbekov/util/logrus
 # environment
-SNAP_VERSION = da76f933
+SNAP_VERSION = d045a5ed
 # environment
 XDG_MENU_PREFIX = gnome-
-# environment
-DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # makefile (from '.env', line 9)
 PORT = :8080
 # environment
-INVOCATION_ID = 2ce153d5eb43492ebf1ea653d09b8570
+INVOCATION_ID = bba6349323dc43e0b3f72d0047a27577
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/103/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/111/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # makefile (from 'Makefile', line 9)
 TAG = latest
 # environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LS_COLORS = 
 # makefile (from '.env', line 5)
 POSTGRES_USER = mrb
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
-# makefile (from 'Makefile', line 1)
-CURRENT_DIR = $(shell pwd)
+# environment
+ 
+GIO_LAUNCHED_DESKTOP_FILE_PID = 11792
 # automatic
 %F = $(notdir $%)
 # environment
@@ -141,11 +142,11 @@ DISPLAY = :0
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-PWD = /home/bobur/p/Norbekov
+PWD = /home/bobur/Apps/Norbekov
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1843
+SSH_AGENT_PID = 2166
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -159,13 +160,11 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/bobur/.config/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
+VSCODE_CODE_CACHE_PATH = /home/bobur/.config/Code/CachedData/d045a5eda657f4d7b676dedbfa7aab8207f8a075
 # environment
 LOGNAME = bobur
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
-# makefile (from 'Makefile', line 8)
-REGISTRY = ${REGISTRY:-861701250313.dkr.ecr.us-east-1.amazonaws.com}
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
@@ -189,9 +188,7 @@ LC_TIME = uz_UZ.UTF-8
 # environment
 SNAP_REAL_HOME = /home/bobur
 # makefile (from '.env', line 3)
-POSTGRES_PORT = 5000
-# environment
-COLORTERM = truecolor
+POSTGRES_PORT = 5432
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -199,9 +196,9 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/bobur/snap/code/103
+SNAP_USER_DATA = /home/bobur/snap/code/111
 # environment
-SHLVL = 1
+SHLVL = 0
 # makefile (from '.env', line 8)
 LOG_LEVEL = debug
 # makefile (from '.env', line 4)
@@ -213,7 +210,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = bobur
 # environment
-SNAP_REVISION = 103
+SNAP_REVISION = 111
 # makefile (from '.env', line 7)
 POSTGRES_SSLMODE = disable
 # environment
@@ -232,14 +229,16 @@ LC_TELEPHONE = uz_UZ.UTF-8
 APP = $(shell basename ${CURRENT_DIR})
 # default
 MAKE_COMMAND := make
-# environment
-OLDPWD = /home/bobur/p
 # default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-5ad521b1-1.70.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-5ad521b1-1.72.2-main.sock
+# makefile (from 'Makefile', line 1)
+CURRENT_DIR = $(shell pwd)
+# environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile
 MAKEFLAGS = pqrR
 # makefile (from 'Makefile', line 10)
@@ -254,8 +253,6 @@ MFLAGS = -pqrR
 GDK_BACKEND = x11
 # environment
 LC_PAPER = uz_UZ.UTF-8
-# environment
-LC_IDENTIFICATION = uz_UZ.UTF-8
 # environment
 QT_ACCESSIBILITY = 1
 # makefile (from '.env', line 10)
@@ -276,17 +273,12 @@ LC_MEASUREMENT = uz_UZ.UTF-8
 SNAP_NAME = code
 # environment
 LC_ALL = C
+# environment
+DBUS_STARTER_BUS_TYPE = session
 # makefile (from '.env', line 1)
- 
 ENVIRONMENT = develop
-# environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
-# environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/a0f240cb_5a86_4de6_bf10_918a8e476323
 # automatic
 ^F = $(notdir $^)
-# environment
-GNOME_TERMINAL_SERVICE = :1.143
 # default
 SUFFIXES := 
 # environment
@@ -296,9 +288,10 @@ CHROME_DESKTOP = code-url-handler.desktop
 # environment
 WINDOWPATH = 2
 # default
+ 
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-GJS_DEBUG_OUTPUT = stderr
+LC_IDENTIFICATION = uz_UZ.UTF-8
 # makefile (from 'Makefile', line 4)
 APP_CMD_DIR = ${CURRENT_DIR}/cmd
 # default
@@ -307,12 +300,14 @@ APP_CMD_DIR = ${CURRENT_DIR}/cmd
 LC_ADDRESS = uz_UZ.UTF-8
 # environment
 LANG = C
+# makefile (from 'Makefile', line 8)
+REGISTRY = ${REGISTRY:-861701250313.dkr.ecr.us-east-1.amazonaws.com}
 # environment
-TERM = xterm-256color
+VSCODE_PID = 11838
 # environment
-VSCODE_PID = 3386
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=ad7674b1b56277ffb17c89076358907c
 # variable set hash-table stats:
-# Load=149/1024=15%, Rehash=0, Collisions=27/180=15%
+# Load=146/1024=14%, Rehash=0, Collisions=28/177=16%
 
 # Pattern-specific Variable Values
 
@@ -320,9 +315,9 @@ VSCODE_PID = 3386
 
 # Directories
 
-# . (device 2053, inode 6559208): 20 files, no impossibilities.
+# . (device 2053, inode 6166928): 23 files, no impossibilities.
 
-# 20 files, no impossibilities in 1 directories.
+# 23 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -352,7 +347,7 @@ proto-gen:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-27 21:04:25.660857574
+#  Last modified 2022-10-26 07:42:33.648433465
 #  File has been updated.
 #  Successfully updated.
 
@@ -366,7 +361,7 @@ build:
 # Not a target:
 .env:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 23:27:00.190485556
+#  Last modified 2022-10-26 07:42:33.644433516
 #  File has been updated.
 #  Successfully updated.
 
@@ -398,6 +393,7 @@ make:
 	cp ./.env.example ./.env
 
 create-env:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -443,12 +439,12 @@ vendor:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 36 / storage = 278 B / avg = 7 B
-# current buf: size = 8162 B / used = 278 B / count = 36 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 39 / storage = 312 B / avg = 8 B
+# current buf: size = 8162 B / used = 312 B / count = 39 / avg = 8 B
 
-# strcache performance: lookups = 53 / hit rate = 32%
+# strcache performance: lookups = 56 / hit rate = 30%
 # hash-table stats:
-# Load=36/8192=0%, Rehash=0, Collisions=1/53=2%
-# Finished Make data base on Sat Aug  6 12:39:24 2022
+# Load=39/8192=0%, Rehash=0, Collisions=1/56=2%
+# Finished Make data base on Wed Oct 26 07:43:12 2022
 
  
