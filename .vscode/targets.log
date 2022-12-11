@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Oct 26 07:43:12 2022
+# Make data base, printed on Sun Dec 11 13:07:08 2022
 
 # Variables
 
@@ -41,15 +41,15 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/bobur/Apps/Norbekov
+CURDIR := /home/bobur/sky/Norbekov
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/111
+SNAP_DATA = /var/snap/code/114
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:49387
+JOURNAL_STREAM = 8:48917
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -71,11 +71,11 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=ad7674b1b56277ffb17c89076358907c
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus,guid=2a2c396321ebc4cc4a51b05b63957810
 # environment
-_ = /snap/code/111/usr/share/code/code
+_ = /snap/code/114/usr/share/code/code
 # environment
-MANAGERPID = 1986
+MANAGERPID = 1991
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -87,29 +87,29 @@ GOPROXY = https://proxy.golang.org,direct
 # makefile (from '.env', line 6)
 POSTGRES_PASSWORD = 0224
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/111/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/114/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /usr/local/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/bobur/go/bin:/home/bobur/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # makefile (from 'Makefile', line 7)
 IMG_NAME = ${APP}
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/bobur-Aspire-E5-573G:@/tmp/.ICE-unix/2206,unix/bobur-Aspire-E5-573G:/tmp/.ICE-unix/2206
+SESSION_MANAGER = local/bobur-Aspire-E5-573G:@/tmp/.ICE-unix/2205,unix/bobur-Aspire-E5-573G:/tmp/.ICE-unix/2205
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/bobur/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/111
+SNAP = /snap/code/114
 # environment
 GOPATH = /home/bobur/go
 # makefile (from 'Makefile', line 5)
 PKG_LIST := github.com/mrboburs/Norbekov/command github.com/mrboburs/Norbekov/configs github.com/mrboburs/Norbekov/docs github.com/mrboburs/Norbekov/model github.com/mrboburs/Norbekov/package/handler github.com/mrboburs/Norbekov/package/repository github.com/mrboburs/Norbekov/package/service github.com/mrboburs/Norbekov/server github.com/mrboburs/Norbekov/util/logrus
 # environment
-SNAP_VERSION = d045a5ed
+SNAP_VERSION = 5235c6bb
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -117,9 +117,9 @@ ELECTRON_RUN_AS_NODE = 1
 # makefile (from '.env', line 9)
 PORT = :8080
 # environment
-INVOCATION_ID = bba6349323dc43e0b3f72d0047a27577
+INVOCATION_ID = 4cd33cfec0a249d68282bacafd77a44e
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/111/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/114/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # makefile (from 'Makefile', line 9)
@@ -133,8 +133,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
- 
-GIO_LAUNCHED_DESKTOP_FILE_PID = 11792
+GIO_LAUNCHED_DESKTOP_FILE_PID = 12565
 # automatic
 %F = $(notdir $%)
 # environment
@@ -142,11 +141,11 @@ DISPLAY = :0
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-PWD = /home/bobur/Apps/Norbekov
+PWD = /home/bobur/sky/Norbekov
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2166
+SSH_AGENT_PID = 2167
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -160,7 +159,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/bobur/.config/Code/CachedData/d045a5eda657f4d7b676dedbfa7aab8207f8a075
+VSCODE_CODE_CACHE_PATH = /home/bobur/.config/Code/CachedData/5235c6bb189b60b01b1f49062f4ffa42384f8c91
 # environment
 LOGNAME = bobur
 # environment
@@ -196,7 +195,7 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/bobur/snap/code/111
+SNAP_USER_DATA = /home/bobur/snap/code/114
 # environment
 SHLVL = 0
 # makefile (from '.env', line 8)
@@ -210,7 +209,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = bobur
 # environment
-SNAP_REVISION = 111
+SNAP_REVISION = 114
 # makefile (from '.env', line 7)
 POSTGRES_SSLMODE = disable
 # environment
@@ -234,7 +233,7 @@ MAKE_COMMAND := make
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-5ad521b1-1.72.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-5ad521b1-1.74.0-main.sock
 # makefile (from 'Makefile', line 1)
 CURRENT_DIR = $(shell pwd)
 # environment
@@ -253,6 +252,10 @@ MFLAGS = -pqrR
 GDK_BACKEND = x11
 # environment
 LC_PAPER = uz_UZ.UTF-8
+# environment
+NO_AT_BRIDGE = 1
+# environment
+LC_IDENTIFICATION = uz_UZ.UTF-8
 # environment
 QT_ACCESSIBILITY = 1
 # makefile (from '.env', line 10)
@@ -275,8 +278,11 @@ SNAP_NAME = code
 LC_ALL = C
 # environment
 DBUS_STARTER_BUS_TYPE = session
+ 
 # makefile (from '.env', line 1)
 ENVIRONMENT = develop
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # automatic
 ^F = $(notdir $^)
 # default
@@ -288,10 +294,9 @@ CHROME_DESKTOP = code-url-handler.desktop
 # environment
 WINDOWPATH = 2
 # default
- 
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-LC_IDENTIFICATION = uz_UZ.UTF-8
+GJS_DEBUG_OUTPUT = stderr
 # makefile (from 'Makefile', line 4)
 APP_CMD_DIR = ${CURRENT_DIR}/cmd
 # default
@@ -303,11 +308,11 @@ LANG = C
 # makefile (from 'Makefile', line 8)
 REGISTRY = ${REGISTRY:-861701250313.dkr.ecr.us-east-1.amazonaws.com}
 # environment
-VSCODE_PID = 11838
+VSCODE_PID = 4334
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=ad7674b1b56277ffb17c89076358907c
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=2a2c396321ebc4cc4a51b05b63957810
 # variable set hash-table stats:
-# Load=146/1024=14%, Rehash=0, Collisions=28/177=16%
+# Load=149/1024=15%, Rehash=0, Collisions=29/180=16%
 
 # Pattern-specific Variable Values
 
@@ -315,7 +320,7 @@ DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=ad7674b1b56277ffb17c890
 
 # Directories
 
-# . (device 2053, inode 6166928): 23 files, no impossibilities.
+# . (device 2053, inode 6039908): 23 files, no impossibilities.
 
 # 23 files, no impossibilities in 1 directories.
 
@@ -347,7 +352,7 @@ proto-gen:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-26 07:42:33.648433465
+#  Last modified 2022-12-11 13:05:16.904428903
 #  File has been updated.
 #  Successfully updated.
 
@@ -361,7 +366,7 @@ build:
 # Not a target:
 .env:
 #  Implicit rule search has been done.
-#  Last modified 2022-10-26 07:42:33.644433516
+#  Last modified 2022-12-11 13:05:16.904428903
 #  File has been updated.
 #  Successfully updated.
 
@@ -393,7 +398,6 @@ make:
 	cp ./.env.example ./.env
 
 create-env:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -445,6 +449,6 @@ vendor:
 # strcache performance: lookups = 56 / hit rate = 30%
 # hash-table stats:
 # Load=39/8192=0%, Rehash=0, Collisions=1/56=2%
-# Finished Make data base on Wed Oct 26 07:43:12 2022
+# Finished Make data base on Sun Dec 11 13:07:08 2022
 
  

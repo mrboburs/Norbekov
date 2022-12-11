@@ -41,6 +41,8 @@ func main() {
 	}
 	configs, err := configs.InitConfig()
 	logrus.Infof("configs %v", configs)
+	// Migation Up
+	repository.MigrateUP(logrus)
 	if err != nil {
 		logrus.Fatalf("error initializing configs: %s", err.Error())
 	}
